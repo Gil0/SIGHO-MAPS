@@ -1,4 +1,17 @@
-# Laravel PHP Framework
+#SIGHO&MAPS (Sistema de Gestion de Horarios y Mapas)
+
+##Descripcion
+SIGHO&MAPS es una herramienta que permite la creacion de horarios aprovechando lo recursos tales como profesores (de los cuales se tiene un perfil informativo), el tiempo y los espacios físicos, ademas de proporcionar una mapa en el que muestra la ubicacion de las aulas y edificios. 
+  
+
+##Equipo de Desarrollo
+Juan Carlos Romero Lorenzo        carlos_-619@hotmail.com
+Ángel Emmanuel Marín Ramírez      manolomr221@gmail.com
+Alfredo Loeza Macías              alfredo_lmacias@hotmail.com
+Irvin Santiago Mitre Martinez     mitre_ismm@outlook.com  
+Rafael Gil Sánchez                gilrafael47@gmail.com
+
+## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
