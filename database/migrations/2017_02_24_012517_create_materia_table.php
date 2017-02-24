@@ -14,7 +14,7 @@ class CreateMateriaTable extends Migration
     {
         //
         Schema::create('materia', function(Blueprint $table){
-            $table->primary('nrc');
+            $table->integer('nrc');
             $table->string('nombre');
             $table->string('salon');
             $table->string('dias');
@@ -22,7 +22,7 @@ class CreateMateriaTable extends Migration
             $table->string('clave');
             $table->integer('idProfesor');
 
-
+            $table->primary('nrc');
             $table->foreign('idProfesor')->references('idProfesor')->on('Profesores');
 
         });
