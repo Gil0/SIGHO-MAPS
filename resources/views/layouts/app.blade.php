@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
@@ -36,9 +35,9 @@
         <div class="container style">
             <div class="collapse navbar-collapse style" id="app-navbar-collapse">
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right style">
+                <!--<ul class="nav navbar-nav navbar-right style">-->
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
+                    <!--@if (Auth::guest())
                         <li><a class="letter" href="{{ url('/login') }}">Login</a></li>
                         <li><a class="letter" href="{{ url('/register') }}">Registrarse</a></li>
                     @else
@@ -52,7 +51,7 @@
                             </ul>
                         </li>
                     @endif
-                </ul>
+                </ul>-->
             </div>
         </div>
     </nav>
