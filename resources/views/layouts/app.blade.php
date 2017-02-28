@@ -18,43 +18,38 @@
         body {
             font-family: 'Lato';
         }
+        .nav-login{
+            position: absolute;
+            left: 80%;
+            top: 5px;
 
-        .fa-btn {
-            margin-right: 6px;
-        }
-        .style{
-            background: #282E34;
         }
         .letter{
             color: #fff;
         }
     </style>
 </head>
-<body id="app-layout" class="style">
-    <nav class="navbar navbar-static-top style">
-        <div class="container style">
-            <div class="collapse navbar-collapse style" id="app-navbar-collapse">
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right style">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a class="letter" href="{{ url('/login') }}">Login</a></li>
-                        <li><a class="letter" href="{{ url('/register') }}">Registrarse</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+<body id="app-layout">
+    <div class="container">
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Right Side Of Navbar -->
+        <ul class="nav nav-pills nav-login">
+            <!-- Authentication Links -->
+            @if (Auth::guest())
+                <li><a class="letter" href="{{ url('/login') }}">Login</a></li>
+                <li><a class="letter" href="{{ url('/register') }}">Registrarse</a></li>
+            @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
+    </div>
 
     @yield('content')
 
