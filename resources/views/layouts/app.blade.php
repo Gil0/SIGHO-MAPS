@@ -20,9 +20,8 @@
         }
         .nav-login{
             position: absolute;
-            left: 80%;
-            top: 5px;
-
+            right: 50px;
+            top: 10px;
         }
         .letter{
             color: #fff;
@@ -31,6 +30,13 @@
 </head>
 <body id="app-layout">
     <div class="container">
+        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>-->
+
 
         <!-- Right Side Of Navbar -->
         <ul class="nav nav-pills nav-login">

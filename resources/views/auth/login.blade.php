@@ -8,6 +8,7 @@
         padding: 0;
         margin: 0;
         font-family: 'Julius Sans One', sans-serif;
+        background: #282E34;
     }
     .inf{
         background: #21272c;
@@ -19,12 +20,45 @@
     .btn1:hover{
         color: #fff;
     }
+    .conten{
+        padding-top: 80px;
+    }
+    .logo{
+        position: absolute;
+        left: 50px;
+        width: 5%;
+        top: 5px;
+    }
+    .log{
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+    .log1{
+        color: #06bb84;
+        font-family: 'Anton', sans-serif;
+        text-align: center;
+    }
+    p{
+        position: absolute;
+        left: 130px;
+        top: 20px;
+    }
+    .login{
+        font-size: 20px;
+    }
 </style>
 <div class="container">
+    <img class="logo" src="Imagenes/Logo.png">
+    <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
+</div>
+<div class="container conten">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default inf">
-                <div class="panel-heading log">Login</div>
+                <div class="panel-heading login">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
