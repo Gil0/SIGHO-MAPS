@@ -177,15 +177,15 @@
             <center><img src="Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
-            <h2 class="Nomt">Rafiki</h2>
-            <p class="inf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit faucibus tortor, sed pulvinar dui efficitur iaculis. Praesent scelerisque luctus placerat. Maecenas faucibus, lectus a hendrerit viverra, elit urna rhoncus risus, ut mollis nulla tortor at lectus. Phasellus lacinia lectus eget blandit porttitor. Fusce id aliquam ex, ac facilisis nibh. Mauris eget nunc et elit tincidunt porta. Vivamus enim lorem, molestie sit amet hendrerit sit amet, viverra non elit. Vivamus viverra fringilla ante, quis pharetra quam laoreet id. Nam ac nisi finibus nulla molestie iaculis vel at justo. Vivamus mattis condimentum iaculis. Aliquam congue, lectus non congue maximus, nibh ante efficitur mauris, eu ullamcorper turpis mauris ac quam. Vivamus at diam metus. In hac habitasse platea dictumst.</p>
+            <h2 class="Nomt">Rafael</h2>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Informacion en la Benemerita Universidad Autonoma de Puebla. Siempre esta cansado y sin energia. Pero siempre saca el trabajo y saca el pack Manolo.</p>
         </div>
     </div>
     <hr/>
     <div class="container">
         <div class="col-md-6">
             <h2 class="Nomt">Veracruz</h2>
-            <p class="inf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit faucibus tortor, sed pulvinar dui efficitur iaculis. Praesent scelerisque luctus placerat. Maecenas faucibus, lectus a hendrerit viverra, elit urna rhoncus risus, ut mollis nulla tortor at lectus. Phasellus lacinia lectus eget blandit porttitor. Fusce id aliquam ex, ac facilisis nibh. Mauris eget nunc et elit tincidunt porta. Vivamus enim lorem, molestie sit amet hendrerit sit amet, viverra non elit. Vivamus viverra fringilla ante, quis pharetra quam laoreet id. Nam ac nisi finibus nulla molestie iaculis vel at justo. Vivamus mattis condimentum iaculis. Aliquam congue, lectus non congue maximus, nibh ante efficitur mauris, eu ullamcorper turpis mauris ac quam. Vivamus at diam metus. In hac habitasse platea dictumst.</p>
+            <p class="inf">Ya me quiero ir a Martinez .</p>
         </div>
         <div class="col-md-6">
             <center><img src="Imagenes/Team.png"></center>
@@ -198,14 +198,14 @@
         </div>
         <div class="col-md-6">
             <h2 class="Nomt">Manulu</h2>
-            <p class="inf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit faucibus tortor, sed pulvinar dui efficitur iaculis. Praesent scelerisque luctus placerat. Maecenas faucibus, lectus a hendrerit viverra, elit urna rhoncus risus, ut mollis nulla tortor at lectus. Phasellus lacinia lectus eget blandit porttitor. Fusce id aliquam ex, ac facilisis nibh. Mauris eget nunc et elit tincidunt porta. Vivamus enim lorem, molestie sit amet hendrerit sit amet, viverra non elit. Vivamus viverra fringilla ante, quis pharetra quam laoreet id. Nam ac nisi finibus nulla molestie iaculis vel at justo. Vivamus mattis condimentum iaculis. Aliquam congue, lectus non congue maximus, nibh ante efficitur mauris, eu ullamcorper turpis mauris ac quam. Vivamus at diam metus. In hac habitasse platea dictumst.</p>
+            <p class="inf">Saca el pack Rafa.</p>
         </div>
     </div>
     <hr/> 
     <div class="container">
         <div class="col-md-6">
             <h2 class="Nomt">Erven</h2>
-            <p class="inf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit faucibus tortor, sed pulvinar dui efficitur iaculis. Praesent scelerisque luctus placerat. Maecenas faucibus, lectus a hendrerit viverra, elit urna rhoncus risus, ut mollis nulla tortor at lectus. Phasellus lacinia lectus eget blandit porttitor. Fusce id aliquam ex, ac facilisis nibh. Mauris eget nunc et elit tincidunt porta. Vivamus enim lorem, molestie sit amet hendrerit sit amet, viverra non elit. Vivamus viverra fringilla ante, quis pharetra quam laoreet id. Nam ac nisi finibus nulla molestie iaculis vel at justo. Vivamus mattis condimentum iaculis. Aliquam congue, lectus non congue maximus, nibh ante efficitur mauris, eu ullamcorper turpis mauris ac quam. Vivamus at diam metus. In hac habitasse platea dictumst.</p>
+            <p class="inf">¿Qué hago aquí?.</p>
         </div>
         <div class="col-md-6">
             <center><img src="Imagenes/Team.png"></center>
@@ -217,8 +217,8 @@
             <center><img src="Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
-            <h2 class="Nomt">Yo :v</h2>
-            <p class="inf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit faucibus tortor, sed pulvinar dui efficitur iaculis. Praesent scelerisque luctus placerat. Maecenas faucibus, lectus a hendrerit viverra, elit urna rhoncus risus, ut mollis nulla tortor at lectus. Phasellus lacinia lectus eget blandit porttitor. Fusce id aliquam ex, ac facilisis nibh. Mauris eget nunc et elit tincidunt porta. Vivamus enim lorem, molestie sit amet hendrerit sit amet, viverra non elit. Vivamus viverra fringilla ante, quis pharetra quam laoreet id. Nam ac nisi finibus nulla molestie iaculis vel at justo. Vivamus mattis condimentum iaculis. Aliquam congue, lectus non congue maximus, nibh ante efficitur mauris, eu ullamcorper turpis mauris ac quam. Vivamus at diam metus. In hac habitasse platea dictumst.</p>
+            <h2 class="Nomt">El pishi Juan :v</h2>
+            <p class="inf">Por fin voy a entrenar.</p>
         </div>
     </div>    
 </div>

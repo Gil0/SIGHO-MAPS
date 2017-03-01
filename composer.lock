@@ -4,7 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "0feb6af5bef0e094e776fba476c27e7c",
+=======
+    "hash": "f9970cd39457a3bb5fbaf7d5bade1e53",
+    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -570,7 +575,11 @@
                 "sftp",
                 "storage"
             ],
+<<<<<<< HEAD
             "time": "2017-02-09T11:33:58+00:00"
+=======
+            "time": "2017-02-09 11:33:58"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "monolog/monolog",
@@ -1017,7 +1026,11 @@
                 "mail",
                 "mailer"
             ],
+<<<<<<< HEAD
             "time": "2017-02-13T07:52:53+00:00"
+=======
+            "time": "2017-02-13 07:52:53"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "symfony/console",
@@ -2060,7 +2073,11 @@
                 "test double",
                 "testing"
             ],
+<<<<<<< HEAD
             "time": "2017-02-09T13:29:38+00:00"
+=======
+            "time": "2017-02-09 13:29:38"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2584,7 +2601,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2017-02-06T05:18:07+00:00"
+=======
+            "time": "2017-02-06 05:18:07"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2704,7 +2725,11 @@
                 "compare",
                 "equality"
             ],
+<<<<<<< HEAD
             "time": "2017-01-29T09:50:25+00:00"
+=======
+            "time": "2017-01-29 09:50:25"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "sebastian/diff",
@@ -3176,7 +3201,11 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-02-16T22:46:52+00:00"
+=======
+            "time": "2017-02-16 22:46:52"
+>>>>>>> d28f90966934f4a79519dbe608516485c70bf5dc
         },
         {
             "name": "webmozart/assert",
