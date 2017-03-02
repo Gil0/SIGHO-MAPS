@@ -134,6 +134,9 @@
         font-size: 20px;
         color: #06bb84;
     }
+    .color{
+        background: #06bb84;
+    }
 </style>
 <div class="parallax">
     <div class="container">
@@ -178,14 +181,90 @@
         </div>
         <div class="col-md-6">
             <h2 class="Nomt">Rafael</h2>
-            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Informacion en la Benemerita Universidad Autonoma de Puebla. Siempre esta cansado y sin energia. Pero siempre saca el trabajo y saca el pack Manolo.</p>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Información en la Facultad de Ciencias de la computación.</p>
+            <p class="inf">Me agradan los temas relacionados con tecnologia y el aprender cosas nuevas. La informatica y fotografia son uno de mis hobbies favoritos.</p>
+            <p class="inf">Conocimientos</p>
+            <p class="inf">-C & C++</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JavaScript</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-Java</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-PHP</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div> 
+            <p class="inf">-HTML & CSS</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div> 
+            <p class="inf">-SQL</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
         </div>
     </div>
     <hr/>
     <div class="container">
         <div class="col-md-6">
-            <h2 class="Nomt">Veracruz</h2>
-            <p class="inf">Ya me quiero ir a Martinez .</p>
+            <h2 class="Nomt">Alfredo</h2>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Información en la Facultad de Ciencias de la computación.</p>
+            <p class="inf">Me agradan los temas relacionados con tecnologia, deportes y cine.</p>
+            <p class="inf">Conocimientos</p>
+            <p class="inf">-C & C++</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-HTML & CSS</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JavaScript</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-Java</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-PHP</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-SQL</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <center><img src="Imagenes/Team.png"></center>
@@ -197,15 +276,91 @@
             <center><img src="Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
-            <h2 class="Nomt">Manulu</h2>
-            <p class="inf">Saca el pack Rafa.</p>
+            <h2 class="Nomt">Angel Emmanuel</h2>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Información en la Facultad de Ciencias de la computación.</p>
+            <p class="inf">Me agradan los temas relacionados con tecnologia y deportes.</p>
+            <p class="inf">Conocimientos</p>
+            <p class="inf">-C & C++</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-HTML & CSS</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JavaScript</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JQuery</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-PHP</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-SQL</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
         </div>
     </div>
     <hr/> 
     <div class="container">
         <div class="col-md-6">
-            <h2 class="Nomt">Erven</h2>
-            <p class="inf">¿Qué hago aquí?.</p>
+            <h2 class="Nomt">Irvin</h2>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Información en la Facultad de Ciencias de la computación.</p>
+            <p class="inf">Me gustan las artes marciales, la historia y su relación con la humanidad y el cine.</p>
+            <p class="inf">Conocimientos</p>
+            <p class="inf">-C & C++</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JavaScript</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-Java</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-PHP</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div> 
+            <p class="inf">-HTML & CSS</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div> 
+            <p class="inf">-SQL</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <center><img src="Imagenes/Team.png"></center>
@@ -217,8 +372,46 @@
             <center><img src="Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
-            <h2 class="Nomt">El pishi Juan :v</h2>
-            <p class="inf">Por fin voy a entrenar.</p>
+            <h2 class="Nomt">Juan Carlos</h2>
+            <p class="inf">Estudiante de sexto cuatrimestre de la carrera en Ingenieria en Tecnologias de la Información en la Facultad de Ciencias de la computación.</p>
+            <p class="inf">Me agradan los temas relacionados con el dibujo, diseño y me apasiona el fisicoculturismo.</p>
+            <p class="inf">Conocimientos</p>
+            <p class="inf">-C & C++</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-HTML & CSS</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                    <span class="sr-only">100% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-JavaScript</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-Java</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-PHP</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
+            <p class="inf">-SQL</p>
+            <div class="progress">
+                <div id="bar" class="progress-bar color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">90% Complete</span>
+                </div>
+            </div>
         </div>
     </div>    
 </div>
