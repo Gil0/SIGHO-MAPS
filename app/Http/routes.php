@@ -20,6 +20,10 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 ////////////////Admin
-Route::get('/homea', 'AdminController@index');
+Route::get('/homea', function(){
+	return view('/Admin/homea');
+});
 ////////////////User
-Route::get('/homeu', 'UserController@index');
+Route::get('/homeu', function(){
+	return view('/User/homeu');
+});
