@@ -23,7 +23,16 @@ Route::get('/home', 'HomeController@index');
 Route::get('/homea', function(){
 	return view('/Admin/homea');
 });
+
 ////////////////User
+
+//Vista del index de usuario
 Route::get('/homeu', function(){
 	return view('/User/homeu');
 });
+//Profesores
+Route::get('/profesores', function(){
+	return view('/User/profesores');
+});
+
+
