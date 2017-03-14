@@ -105,7 +105,7 @@
     }
 </style>
 <div class="navv">
-    <img class="logo" src="Imagenes/Logo.png">
+    <img class="logo" src="../Imagenes/Logo.png">
     <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
 </div>
 <div class="banner col-md-12">
