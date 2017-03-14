@@ -64,6 +64,17 @@
 </div>
 <br/>
 <br/>
+<div class="container">
+	<div class="col-md-8">
+		<div class="input-group">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">Buscar</button>
+			</span>
+			<input type="text" class="form-control">
+		</div>
+	</div>
+</div>
+<br/>
 <div class="container tabla">
 	<table class="table table-bordered">
 		<thead>
