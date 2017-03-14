@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 
 class AdminController extends Controller
@@ -23,10 +23,43 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function profesores(){
+         $profesores = DB::table('profesores')->select('*')->get();
+        return view('/Admin/AdminProfesores',['profesores'=>$profesores]);
+     }
+
+     public function crearProfesores(Request $request){
+         DB::table('profesores')->insert([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+            'cubiculo' =>$request->cubiculo,
+            'correoElectronico' => $request->email,
+        ]);
+     
+       return redirect()->action('AdminController@profesores');
+     }
+
+    
+    public function editarProfesor(Request $request, $id){
+        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$idProfesor)->first();
+
+        return view('/admin/Profesor',['profesor'=>$profesor]);
+    }
+
+
+    public function eliminarProfesor(Request $request, $id)
+    {
+        DB::table('profesores')->where('idProfesor',$id)->delete();
+
+         return redirect()->action('AdminController@profesores');
+    }
     public function create()
     {
         //
     }
+
+
 
     /**
      * Store a newly created resource in storage.

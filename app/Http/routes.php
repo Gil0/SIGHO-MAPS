@@ -24,9 +24,14 @@ Route::get('Admin/Home', function(){
 	return view('/Admin/AdminHome');
 });
 //Profesores
-Route::get('Admin/Profesores', function(){
-	return view('/Admin/AdminProfesores');
-});
+
+Route::get('/Admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'AdminController@crearprofesores']);
+Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
+
+
+
+
 ////////////////User
 
 //Vista del index de usuario
@@ -37,6 +42,10 @@ Route::get('User/Home', function(){
 Route::get('User/Profesores', function(){
 	return view('/User/UserProfesores');
 });
+/*Route::get('/homeu', function(){
+	return view('/User/homeu');
+});*/
+
 
 
 

@@ -54,7 +54,7 @@
     </div>
     <div class="container">
         <ul class="nav nav-pills letter">
-          <li class="nav1"><a class="nav1"href="{{ url('User/Home') }}">Inicio</a></li>
+          <li class="nav1"><a class="nav1"href="{{ url('/') }}">Inicio</a></li>
           <li><a class="nav1"href="#">Horario</a></li>
           <li><a class="select nav1"href="{{ url('User/Profesores') }}">Profesores</a></li>
           <li><a class="nav1"href="#">Mapas</a></li>
