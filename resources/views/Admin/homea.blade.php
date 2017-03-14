@@ -146,7 +146,7 @@
         <ul class="nav nav-pills">
           <li class="select "><a class="nav1"href="#">Inicio</a></li>
           <li><a class="nav1"href="#">Horario</a></li>
-          <li><a class="nav1"href="#">Profesores</a></li>
+          <li><a class="nav1"href="{{ url('Admin/Profesores') }}">Profesores</a></li>
           <li><a class="nav1"href="#">Mapas</a></li>
         </ul>
     </div>
