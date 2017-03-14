@@ -24,15 +24,13 @@ Route::get('/homea', function(){
 	return view('/Admin/homea');
 });
 //Profesores
-Route::get('Admin/Profesores', function(){
-	return view('/Admin/AdminProfesores');
-});
+Route::get('/admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
 ////////////////User
 
 //Vista del index de usuario
-Route::get('/homeu', function(){
+/*Route::get('/homeu', function(){
 	return view('/User/homeu');
-});
+});*/
 
 
 
