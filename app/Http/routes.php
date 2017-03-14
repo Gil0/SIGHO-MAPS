@@ -24,7 +24,15 @@ Route::get('Admin/Home', function(){
 	return view('/Admin/AdminHome');
 });
 //Profesores
+
 Route::get('/Admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'AdminController@crearprofesores']);
+Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
+Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
+
+
+
+
 ////////////////User
 
 //Vista del index de usuario
