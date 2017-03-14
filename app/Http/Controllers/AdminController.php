@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 
 class AdminController extends Controller
@@ -23,6 +23,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function profesores(){
+         $profesores = DB::table('profesores')->select('*')->get();
+        return view('/admin/AdminProfesores',['profesores'=>$profesores]);
+     }
     public function create()
     {
         //
