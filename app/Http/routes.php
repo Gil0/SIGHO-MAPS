@@ -20,20 +20,32 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 ////////////////Admin
-Route::get('/homea', function(){
-	return view('/Admin/homea');
+Route::get('Admin/Home', function(){
+	return view('/Admin/AdminHome');
 });
 //Profesores
-Route::get('/admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+
+Route::get('/Admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
 Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'AdminController@crearprofesores']);
 Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
+
+
+
 
 ////////////////User
 
 //Vista del index de usuario
+Route::get('User/Home', function(){
+	return view('/User/UserHome');
+});
+//Profesores
+Route::get('User/Profesores', function(){
+	return view('/User/UserProfesores');
+});
 /*Route::get('/homeu', function(){
 	return view('/User/homeu');
 });*/
+
 
 
 

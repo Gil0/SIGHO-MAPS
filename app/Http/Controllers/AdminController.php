@@ -26,18 +26,18 @@ class AdminController extends Controller
 
      public function profesores(){
          $profesores = DB::table('profesores')->select('*')->get();
-        return view('/admin/AdminProfesores',['profesores'=>$profesores]);
+        return view('/Admin/AdminProfesores',['profesores'=>$profesores]);
      }
 
      public function crearProfesores(Request $request){
          DB::table('profesores')->insert([
             'nombre' => $request->nombre,
             'apellidos' => $request->apellidos,
+            'cubiculo' =>$request->cubiculo,
+            'correoElectronico' => $request->email,
         ]);
-
-       $profesores = DB::table('profesores')->select('id')->where('nombre',$request->nombre)->first(); //regresa un JSON :)
-      
-       return redirect()->action('AdminController@editarProfesor', ['idProfesor' => $profesores->idProfesor]);
+     
+       return redirect()->action('AdminController@profesores');
      }
 
     
@@ -52,7 +52,7 @@ class AdminController extends Controller
     {
         DB::table('profesores')->where('idProfesor',$id)->delete();
 
-        return redirect('/admin/Profesores');
+         return redirect()->action('AdminController@profesores');
     }
     public function create()
     {

@@ -76,20 +76,19 @@
     	font-family: 'Anton', sans-serif;
     	letter-spacing: 2px;
     	font-size: 70px;
-        padding-left: 12%;
     }
     .menuvertical{
         position: fixed;
         padding-top: 0px;
         background-color: #37474F;
-        width: 250px;
+        width: 299px;
         height: 100%;
     }
     .navvertical{
         list-style-type: none;
         margin: 0;
         padding: 0;
-        width: 250px;
+        width: 299px;
         font-style: none;
     }
     .subnav{
@@ -104,29 +103,51 @@
     .menuvertical a span{
         margin-left: 10px;
     }
+    .contenprincipal{
+        margin: 0;
+        padding: 0;
+    }
+    .buscador{
+        padding-top: 10px;
+    }
 </style>
 <div class="navv">
     <img class="logo" src="../Imagenes/Logo.png">
     <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
 </div>
-<div class="banner col-md-12">
-    <div class="container">
-        <p class="profesor">Profesores</p>
-    </div>
-</div>
-<div class="menuvertical">
-    <ul class="navvertical">
-        <li><a class="nav1"href="#">Inicio</a></li>
-        <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
-            <ul class="subnav">
-                <li><a class="nav2" href="">Lista</a></li>
-                <li><a class="nav2" href="">Comentarios</a></li>
+<div class="col-md-12 contenprincipal">
+    <div class="col-md-3 contenprincipal">
+        <div class="menuvertical">
+            <ul class="navvertical">
+                <li><a class="nav1"href="#">Inicio</a></li>
+                <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
+                    <ul class="subnav">
+                        <li><a class="nav2" href="">Lista</a></li>
+                        <li><a class="nav2" href="">Comentarios</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav1"href="#">Mapas</a></li>
             </ul>
-        </li>
-        <li><a class="nav1"href="#">Mapas</a></li>
-    </ul>
-</div>
-<div><!--Este div se va a cambiar por otro.-->
+        </div>
+    </div>
+    <div class="col-md-9 contenprincipal">
+        <div class="col-md-12 contenprincipal">
+            <div class="banner">
+                <div class="container">
+                    <p class="profesor">Profesores</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-md-8 contenprincipal buscador">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Buscar</button>
+                        </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div><!--Este div se va a cambiar por otro.-->
     <div class="panel-heading">
         <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoProfesor">Nuevo Profesor</button>
     </div>
@@ -168,7 +189,9 @@
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="Nombre" name="nombre" required><br>
-            <input type="text" class="form-control" placeholder="Apellidos" name="nombre" required><br>
+            <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required><br>
+            <input type="text" class="form-control" placeholder="Cubiculo" name="cubiculo" required><br>
+            <input type="email" class="form-control" placeholder="Correo Electronico" name="email" required><br>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
@@ -210,15 +233,21 @@
     </div>
   </div>
 </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
 
-
+<br/>
+<br/>
 
 <script>
 $(".submenu").click(function(){
     $(this).children("ul").slideToggle();
 })
 </script>
-
 
 <script>
     $(document).ready(function(){
@@ -268,6 +297,5 @@ $(".submenu").click(function(){
     });
 
 </script>
-
 
 @endsection
