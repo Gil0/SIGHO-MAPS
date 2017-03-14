@@ -25,6 +25,9 @@ Route::get('/homea', function(){
 });
 //Profesores
 Route::get('/admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'AdminController@crearprofesores']);
+Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
+
 ////////////////User
 
 //Vista del index de usuario

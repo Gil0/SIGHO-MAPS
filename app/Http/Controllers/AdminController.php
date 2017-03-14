@@ -28,10 +28,38 @@ class AdminController extends Controller
          $profesores = DB::table('profesores')->select('*')->get();
         return view('/admin/AdminProfesores',['profesores'=>$profesores]);
      }
+
+     public function crearProfesores(Request $request){
+         DB::table('profesores')->insert([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+        ]);
+
+       $profesores = DB::table('profesores')->select('id')->where('nombre',$request->nombre)->first(); //regresa un JSON :)
+      
+       return redirect()->action('AdminController@editarProfesor', ['idProfesor' => $profesores->idProfesor]);
+     }
+
+    
+    public function editarProfesor(Request $request, $id){
+        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$idProfesor)->first();
+
+        return view('/admin/Profesor',['profesor'=>$profesor]);
+    }
+
+
+    public function eliminarProfesor(Request $request, $id)
+    {
+        DB::table('profesores')->where('idProfesor',$id)->delete();
+
+        return redirect('/admin/Profesores');
+    }
     public function create()
     {
         //
     }
+
+
 
     /**
      * Store a newly created resource in storage.
