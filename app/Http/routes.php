@@ -24,11 +24,10 @@ Route::get('Admin/Home', function(){
 	return view('/Admin/AdminHome');
 });
 //Profesores
-Route::get('/admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+Route::get('/Admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
 ////////////////User
 
 //Vista del index de usuario
-<<<<<<< HEAD
 Route::get('User/Home', function(){
 	return view('/User/UserHome');
 });
@@ -36,11 +35,10 @@ Route::get('User/Home', function(){
 Route::get('User/Profesores', function(){
 	return view('/User/UserProfesores');
 });
-=======
 /*Route::get('/homeu', function(){
 	return view('/User/homeu');
 });*/
->>>>>>> d08f58210078f2c686d60f5ed2529b48abfb7a93
+
 
 
 

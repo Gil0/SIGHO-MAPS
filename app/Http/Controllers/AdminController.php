@@ -26,7 +26,7 @@ class AdminController extends Controller
 
      public function profesores(){
          $profesores = DB::table('profesores')->select('*')->get();
-        return view('/admin/AdminProfesores',['profesores'=>$profesores]);
+        return view('/Admin/AdminProfesores',['profesores'=>$profesores]);
      }
     public function create()
     {

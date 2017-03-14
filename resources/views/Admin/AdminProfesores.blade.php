@@ -75,20 +75,19 @@
     	font-family: 'Anton', sans-serif;
     	letter-spacing: 2px;
     	font-size: 70px;
-        padding-left: 12%;
     }
     .menuvertical{
         position: fixed;
         padding-top: 0px;
         background-color: #37474F;
-        width: 250px;
+        width: 299px;
         height: 100%;
     }
     .navvertical{
         list-style-type: none;
         margin: 0;
         padding: 0;
-        width: 250px;
+        width: 299px;
         font-style: none;
     }
     .subnav{
@@ -103,32 +102,56 @@
     .menuvertical a span{
         margin-left: 10px;
     }
+    .contenprincipal{
+        margin: 0;
+        padding: 0;
+    }
+    .buscador{
+        padding-top: 150px;
+    }
 </style>
 <div class="navv">
     <img class="logo" src="../Imagenes/Logo.png">
-    <a href="{{ url('/Admin/Home') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
+    <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
 </div>
-<div class="banner col-md-12">
-    <div class="container">
-        <p class="profesor">Profesores</p>
+<div class="col-md-12 contenprincipal">
+    <div class="col-md-3 contenprincipal">
+        <div class="menuvertical">
+            <ul class="navvertical">
+                <li><a class="nav1"href="#">Inicio</a></li>
+                <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
+                    <ul class="subnav">
+                        <li><a class="nav2" href="">Lista</a></li>
+                        <li><a class="nav2" href="">Comentarios</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav1"href="#">Mapas</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9 contenprincipal">
+        <div class="banner col-md-12 contenprincipal">
+            <div class="container">
+                <p class="profesor">Profesores</p>
+            </div>
+            <div class="container">
+                <div class="col-md-8 contenprincipal buscador">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Buscar</button>
+                        </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="menuvertical">
-    <ul class="navvertical">
-        <li><a class="nav1"href="#">Inicio</a></li>
-        <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
-            <ul class="subnav">
-                <li><a class="nav2" href="">Lista</a></li>
-                <li><a class="nav2" href="">Comentarios</a></li>
-            </ul>
-        </li>
-        <li><a class="nav1"href="#">Mapas</a></li>
-    </ul>
-</div>
+<br/>
+<br/>
 <script>
 $(".submenu").click(function(){
     $(this).children("ul").slideToggle();
 })
 </script>
-
 @endsection
