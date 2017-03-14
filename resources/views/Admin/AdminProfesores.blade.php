@@ -285,7 +285,7 @@ $(".submenu").click(function(){
         });
 
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesor/'+$(this).attr('value')+'/editar';
+           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
         });
 
          $('i.fa-trash').click(function(){

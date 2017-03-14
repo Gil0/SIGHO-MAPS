@@ -42,9 +42,9 @@ class AdminController extends Controller
 
     
     public function editarProfesor(Request $request, $id){
-        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$idProfesor)->first();
+        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$id)->first();
 
-        return view('/admin/Profesor',['profesor'=>$profesor]);
+        return view('/Admin/EditarProfesor',['profesores'=>$Profesor]);
     }
 
 
