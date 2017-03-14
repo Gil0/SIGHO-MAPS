@@ -20,8 +20,8 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 ////////////////Admin
-Route::get('/homea', function(){
-	return view('/Admin/homea');
+Route::get('Admin/Home', function(){
+	return view('/Admin/AdminHome');
 });
 //Profesores
 Route::get('Admin/Profesores', function(){
@@ -30,8 +30,12 @@ Route::get('Admin/Profesores', function(){
 ////////////////User
 
 //Vista del index de usuario
-Route::get('/homeu', function(){
-	return view('/User/homeu');
+Route::get('User/Home', function(){
+	return view('/User/UserHome');
+});
+//Profesores
+Route::get('User/Profesores', function(){
+	return view('/User/UserProfesores');
 });
 
 
