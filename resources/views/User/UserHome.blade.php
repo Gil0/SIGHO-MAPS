@@ -11,14 +11,14 @@
     }
     .parallax { 
         height: 500px;
-        background-image: url(Imagenes/bg.jpg);
+        background-image: url(../Imagenes/bg.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
     }
     .parallax1 { 
-        background-image: url(Imagenes/oficina.jpg);
+        background-image: url(../Imagenes/oficina.jpg);
         height: 350px; 
         background-attachment: fixed;
         background-position: center;
@@ -26,7 +26,7 @@
         background-size: cover;
     }
     .parallax2{ 
-        background-image: url(Imagenes/bg.jpg);
+        background-image: url(../Imagenes/bg.jpg);
         height: 200px; 
         background-attachment: fixed;
         background-position: center;
@@ -140,12 +140,13 @@
 </style>
 <div class="parallax">
     <div class="container">
-        <img class="logo" src="Imagenes/Logo.png">
+        <img class="logo" src="../Imagenes/Logo.png">
     </div>
     <div class="container">
         <ul class="nav nav-pills">
-          <li class="select "><a class="nav1"href="#">Inicio</a></li>
-          <li><a class="nav1"href="#">Profesores</a></li>
+          <li class="select "><a class="nav1"href="{{ url('User/Home') }}">Inicio</a></li>
+          <li><a class="nav1"href="#">Horario</a></li>
+          <li><a class="nav1"href="{{ url('User/Profesores') }}">Profesores</a></li>
           <li><a class="nav1"href="#">Mapas</a></li>
         </ul>
     </div>
@@ -168,7 +169,7 @@
         <hr/>
     </div>
     <div class="col-md-4">
-        <center><img class="list" src="Imagenes/List.png"></center>
+        <center><img class="list" src="../Imagenes/List.png"></center>
     </div>
 </div>
 <div class="cantainer col-md-12 parallax1"></div>
@@ -176,7 +177,7 @@
     <h1 class="acerca">EQUIPO DE TRABAJO</h1>
     <div class="container">
         <div class="col-md-6">
-            <center><img src="Imagenes/Team.png"></center>
+            <center><img src="../Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
             <h2 class="Nomt">Rafael</h2>
@@ -266,13 +267,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <center><img src="Imagenes/Team.png"></center>
+            <center><img src="../Imagenes/Team.png"></center>
         </div>
     </div>
     <hr/>
     <div class="container">
         <div class="col-md-6">
-            <center><img src="Imagenes/Team.png"></center>
+            <center><img src="../Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
             <h2 class="Nomt">Angel Emmanuel</h2>
@@ -362,13 +363,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <center><img src="Imagenes/Team.png"></center>
+            <center><img src="../Imagenes/Team.png"></center>
         </div>
     </div>
     <hr/>
     <div class="container">
         <div class="col-md-6">
-            <center><img src="Imagenes/Team.png"></center>
+            <center><img src="../Imagenes/Team.png"></center>
         </div>
         <div class="col-md-6">
             <h2 class="Nomt">Juan Carlos</h2>

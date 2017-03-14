@@ -18,3 +18,25 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+////////////////Admin
+Route::get('Admin/Home', function(){
+	return view('/Admin/AdminHome');
+});
+//Profesores
+Route::get('Admin/Profesores', function(){
+	return view('/Admin/AdminProfesores');
+});
+////////////////User
+
+//Vista del index de usuario
+Route::get('User/Home', function(){
+	return view('/User/UserHome');
+});
+//Profesores
+Route::get('User/Profesores', function(){
+	return view('/User/UserProfesores');
+});
+
+
+
