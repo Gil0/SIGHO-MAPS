@@ -19,8 +19,7 @@ class CreateProfesoresTable extends Migration
             $table->string('apellidos');
             $table->string('cubiculo');
             $table->string('correoElectronico')->unique();
-            $table->float('calificacion');
-
+            $table->float('calificacion')->nullable();
         });
     }
 
