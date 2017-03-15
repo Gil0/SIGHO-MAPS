@@ -20,6 +20,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+     public function comentario(){
+         return $this->hasMany('App\comentario','idUsuario', 'id');
+     }
     protected $hidden = [
         'password', 'remember_token',
     ];
