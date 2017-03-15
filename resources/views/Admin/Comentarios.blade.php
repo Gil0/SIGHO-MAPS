@@ -171,13 +171,14 @@
                                     <th scope="row">{{$comentarios->idComentario}}</th>
                                     <th>{{$comentarios->comentario}}</th>
                                     <th>{{$comentarios->calificacion}}</th>
-                                    <th class="text-center">
+                                     <th class="text-center">
+                                        <!-- Single button -->
                                         <div class="btn-group">
-                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
+                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentario->id}}" value="{{$comentario->status}}">
                                            <i class="fa fa-bullseye" aria-hidden="true"></i>
                                         </button>
                                         </div>
-                                    </th> 
+                                    </th>
                                 </tr>
                             @endforeach
                         </tbody>
