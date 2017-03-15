@@ -297,7 +297,9 @@ $(".submenu").click(function(){
         });
 
         $('i.fa-pencil-square').click(function(){
+
            window.location.href = '/Admin/profesor/'+$(this).attr('value')+'/editar';
+
         });
 
          $('i.fa-trash').click(function(){

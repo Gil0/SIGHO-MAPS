@@ -44,9 +44,16 @@ class AdminController extends Controller
 
     
     public function editarProfesor(Request $request, $id){
-        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$idProfesor)->first();
 
-        return view('/admin/Profesor',['idProfesor'=>$profesor]);
+
+        $profesores = DB::table('profesores')
+            ->join('formacionAcademica', 'formacionAcademica.idProfesor','=', 'profesores.idProfesor')
+            ->join('informacionLaboral', 'informacionLaboral.idProfesor','=', 'profesores.idProfesor')
+            ->select('profesores.*', 'formacionAcademica.*','informacionLaboral.*')
+            ->where('profesores.idProfesor', $id)
+            ->get();
+        return view('/Admin/EditarProfesor',['profesores'=>$profesores]);
+
     }
 
 
@@ -56,6 +63,23 @@ class AdminController extends Controller
 
          return redirect()->action('AdminController@profesores');
     }
+
+    public function guardarCambiosProfesor(Request $request, $id)
+    {
+        DB::table('profesores')->where('idProfesor',$id)->update([
+            'nombre' => $request->nombreProfesor,
+            'apellidos'  => $request->apellidoProfesor,
+            'cubiculo' => $request->cubiculoProfesor,
+            'correoElectronico'   => $request->emailProfesor,
+            
+        ]);
+
+        $Profesor = DB::table('profesores')->select('*')->where('idProfesor',$id)->first();
+
+        return view('/Admin/EditarProfesor',['profesores'=>$Profesor]);
+    }
+
+
     public function create()
     {
         //
