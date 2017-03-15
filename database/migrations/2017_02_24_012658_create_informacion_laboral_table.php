@@ -21,7 +21,7 @@ class CreateInformacionLaboralTable extends Migration
             $table->integer('idProfesor');
 
 
-            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores');
+            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
 
         });
     }
