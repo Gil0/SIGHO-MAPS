@@ -59,4 +59,5 @@ Route::post('/admin/comentarios/{id}/cambiarStatus',['middleware' => 'admin', 'u
 Route::get('/admin/Profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
 
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
+
 Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
