@@ -2,10 +2,14 @@
 
 @section('content')
 <meta name="csrf_token" content="{{ csrf_token() }}" /> <!--Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <link rel="stylesheet" href="{!!asset('css/bootstrap.min.css')!!}">
+ <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
     @import url('https://fonts.googleapis.com/css?family=Anton');
+
+
     body{
         padding: 0;
         margin: 0;
@@ -134,7 +138,7 @@
         <div class="col-md-12 contenprincipal">
             <div class="banner">
                 <div class="container">
-                    <p class="profesor">Profesores</p>
+                    <p class="profesor">Comentarios</p>
                 </div>
             </div>
             <div class="container">
@@ -148,37 +152,39 @@
                 </div>
             </div>
  <div><!--Este div se va a cambiar por otro.-->
- 
+
     
     <div class="panel-body">
         <table class="table table-striped">
                         <thread>
                             <tr>
                                 <th>#</th>
-                                <th>nombre</th>
-                                <th>apellidos</th>
-                                <th>ver mas</th>
-                                <th>Escribir comentario</th>
-                                <th></th>
+                                <th>comentario</th>
+                                <th>Calificacion</th>
+                                    
+                                <th class="text-center">Status</th>
                             </tr>
                         </thread>
                         <tbody>
-                            @foreach($profesores as $profesores)
+                            @foreach($comentarios as $comentarios)
                                 <tr>
-                                    <th scope="row">{{$profesores->idProfesor}}</th>
-                                    <th>{{$profesores->nombre}}</th>
-                                    <th>{{$profesores->apellidos}}</th>
-                                    <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
-                                    <th> <div class="panel-heading">
-        <button class="btn btn-success" style="width:10%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Nuevo comentario</button>
-    </div></th>
-      
-                                    
+                                    <th scope="row">{{$comentarios->idComentario}}</th>
+                                    <th>{{$comentarios->comentario}}</th>
+                                    <th>{{$comentarios->calificacion}}</th>
+                                     <th class="text-center">
+                                        <!-- Single button -->
+                                        <div class="btn-group">
+                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentario->id}}" value="{{$comentario->status}}">
+                                           <i class="fa fa-bullseye" aria-hidden="true"></i>
+                                        </button>
+                                        </div>
+                                    </th>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+
 <!-- modal Nuevo Profesor-->
 <div class="modal fade" id="nuevoComentario" tabindex="-1" role="dialog" aria-labelledby="Nuevo comentario">
   <div class="modal-dialog" role="document">
@@ -227,20 +233,16 @@
 <br/>
 <br/>
 
-<script>
-$(".submenu").click(function(){
-    $(this).children("ul").slideToggle();
-})
-</script>
+
 
 <script>
     $(document).ready(function(){
 
         $('i.fa-plus-circle').click(function(){
-           $('#verProfesor').modal('show'); 
+           $('#verEvento').modal('show');
 
             $.ajax({
-                url : '/admin/profesor/'+$(this).attr('value')+'/getInformacion',
+                url : '/admin/evento/'+$(this).attr('value')+'/getInformacion',
                 type : 'GET',
                 dataType : 'json',
                 beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
@@ -269,17 +271,55 @@ $(".submenu").click(function(){
         });
 
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesor/'+$(this).attr('value')+'/editar';
+           window.location.href = '/Admin/comentarios/'+$(this).attr('value')+'/editar';
         });
 
          $('i.fa-trash').click(function(){
-           $('#eliminarProfesor').modal('show');
-           $('form#eliminarProfesor').attr('action','/admin/profesores/'+$(this).attr('value')+'/eliminar');
+           $('#eliminarEvento').modal('show');
+           $('form#eliminarEvento').attr('action','/admin/evento/'+$(this).attr('value')+'/eliminar');
          });
 
+         $('.rowsTabla > th > div > button').each(function(){
+             if($(this).attr('value') == false){
+                 $(this).addClass("btn-danger");
+             }
+             else{
+                 $(this).addClass("btn-success");
+             }
+         });
+         $('.rowsTabla > th > div > button').click(function(){
+             //alert($(this).attr('id'));
+             if($(this).attr('value') == false)
+             {
+                 $(this).removeClass('btn-danger');
+                 $(this).addClass('btn-success');
+                 $(this).attr('value',true);
+             }
+             else{
+                 $(this).removeClass('btn-success');
+                 $(this).addClass('btn-danger');
+                 $(this).attr('value',false);
+             }
+             $.ajax({
+                 url:'/admin/Comentarios/'+$(this).attr('idComentario')+'/cambiarStatus',
+                 type:'POST',
+                 dataType:'json',
+                 data:{
+                     'status': $(this).attr('value')
+                 },beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
+                    var token = $('meta[name="csrf_token"]').attr('content');
 
+                    if (token) {
+                        return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                    }
+                },
+                 success:function(response){
+                     //alert(response);
+                 }
+             });
+         });
     });
-
 </script>
 
 @endsection
+

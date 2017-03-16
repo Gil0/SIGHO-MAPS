@@ -210,11 +210,13 @@
 </div>
 
 <!-- modal informacion Profesor-->
-<div class="modal fade" id="verEvento" tabindex="-1" role="dialog" aria-labelledby="Ver Profesor">
+<div class="modal fade" id="verProfesor" tabindex="-1" role="dialog" aria-labelledby="Ver Profesor">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" id="informacionProfesor">
-           
+      <div class="modal-header" id="informacionProfesor"> 
+         <div class="modal-header" id="informacionProfesor"> 
+         
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" style="width:100%;" data-dismiss="modal">Cerrar</button>
@@ -273,17 +275,27 @@ $(".submenu").click(function(){
                      }
                },
                 success:function(response){
-                    $('div#informacionEvento').html(
+                    $('div#informacionProfesor').html(
                         '<div class="col-sm-12">'+
                             '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
-                                '</div>'+
+                                '<div class="col-sm-12">'+
+                                    '<p class="lead">Nombre: '+response.nombre+'</p>'+
+                                '</div>'+'<br/>'+'<br/>'+
                             '</div>'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
-                                    '<p class="lead">'+response.descripcion+'</p>'+
-                                '</div>'+
+                                    '<p class="lead">Apellidos: '+response.apellidos+'</p>'+
+                                '</div>'+'<br/>'+'<br/>'+
+                            '</div>'+
+                            '<div class="row">'+
+                                '<div class="col-sm-12">'+
+                                    '<p class="lead">Email: '+response.correoElectronico+'</p>'+
+                                '</div>'+'<br/>'+'<br/>'+
+                            '</div>'+
+                            '<div class="row">'+
+                                '<div class="col-sm-12">'+
+                                    '<p class="lead">Cubiculo: '+response.cubiculo+'</p>'+
+                                '</div>'+'<br/>'+'<br/>'+
                             '</div>'+
                         '</div>'
                     );
@@ -292,7 +304,9 @@ $(".submenu").click(function(){
         });
 
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+
+           window.location.href = '/Admin/profesor/'+$(this).attr('value')+'/editar';
+
         });
 
          $('i.fa-trash').click(function(){

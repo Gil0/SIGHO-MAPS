@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests;
 
 class AdminController extends Controller
@@ -42,11 +44,13 @@ class AdminController extends Controller
 
     
     public function editarProfesor(Request $request, $id){
+
         
         $profesor= DB::table('profesores')->select('*')->where('idProfesor', $id)->first();
         $academica = DB::table('formacionAcademica')->select('*')->where('idProfesor',$id)->get();
         $laboral = DB::table('informacionLaboral')->select('*')->where('idProfesor',$id)->get();
         return view('/Admin/EditarProfesor')->with('profesores',$profesor)->with( 'academica',$academica)->with('laboral',$laboral);      
+
     }
 
 
@@ -135,4 +139,42 @@ class AdminController extends Controller
     {
         //
     }
+
+
+    public function cambiarStatus(Request $request, $id)
+    {
+        $evento = DB::table('comentarios')->where('idComentario',$id)->update(['status' => $request->status]);
+        return json_encode('ok');
+    }
+
+    public function comentarios(){
+         $comentarios = DB::table('comentarios')->select('*')->get();
+        return view('/Admin/comentarios',['comentarios'=>$comentarios]);
+     }
+
+  public function getInfoProfesor(Request $request, $id)
+    {
+        $profesor = DB::table('profesores')->select('*')->where('idProfesor',$id)->first();
+        return json_encode($profesor);
+    }
+     
+
+public function guardarCambiosEvento(Request $request, $id)
+    {
+        
+        DB::table('profesores')->where('idProfesor',$id)->update([
+                    'nombre' => $request->input('nombreProfesor'),
+                    'apellidos'  => $request->input('apellidos'),
+            'cubiculo' => $request->input('cubiculo'),
+            'correoElectronico'   => $request->input('email'),
+        ]);
+
+
+        return redirect('/admin/eventos');
+    }
+
+
+
 }
+
+ 
