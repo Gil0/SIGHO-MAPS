@@ -55,10 +55,10 @@ Route::post('/user/comentario/crear',  ['middleware' , 'uses' => 'UserController
 
 Route::get('/Admin/Comentarios',  ['middleware' => 'admin', 'uses' => 'AdminController@comentarios']);
 
-Route::post('/admin/comentarios/{id}/cambiarStatus',['middleware' => 'admin', 'uses' => 'AdminController@cambiarStatus']);
+Route::post('/Admin/Comentarios/{id}/cambiarStatus',['middleware' => 'admin', 'uses' => 'AdminController@cambiarStatus']);
 
 
-Route::get('/admin/Profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
+Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
 
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
 

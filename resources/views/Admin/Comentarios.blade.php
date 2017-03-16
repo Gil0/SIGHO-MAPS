@@ -155,26 +155,27 @@
 
     
     <div class="panel-body">
-        <table class="table table-striped">
+       <table class="table table-striped">
                         <thread>
                             <tr>
-                                <th>#</th>
-                                <th>comentario</th>
-                                <th>Calificacion</th>
-                                    
-                                <th class="text-center">Status</th>
+                                <th class="head">Id</th>
+                                <th class="head">Comentario</th>
+                                <th class="head">Calificacion</th>
+                                <th class="head"></th>
+                                <th class="head"></th>
+                                <th class="head text-center">Status</th>
                             </tr>
                         </thread>
                         <tbody>
                             @foreach($comentarios as $comentarios)
-                                <tr>
+                                <tr class="rowsTabla">
                                     <th scope="row">{{$comentarios->idComentario}}</th>
                                     <th>{{$comentarios->comentario}}</th>
-                                    <th>{{$comentarios->calificacion}}</th>
-                                     <th class="text-center">
+                                     <th>{{$comentarios->calificacion}}</th>
+                                    <th class="text-center">
                                         <!-- Single button -->
                                         <div class="btn-group">
-                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentario->id}}" value="{{$comentario->status}}">
+                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
                                            <i class="fa fa-bullseye" aria-hidden="true"></i>
                                         </button>
                                         </div>
@@ -238,70 +239,30 @@
 <script>
     $(document).ready(function(){
 
-        $('i.fa-plus-circle').click(function(){
-           $('#verEvento').modal('show');
-
-            $.ajax({
-                url : '/admin/evento/'+$(this).attr('value')+'/getInformacion',
-                type : 'GET',
-                dataType : 'json',
-                beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
-                    var token = $('meta[name="csrf_token"]').attr('content');
-                    if (token) {
-                          return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                     }
-               },
-                success:function(response){
-                    $('div#informacionEvento').html(
-                        '<div class="col-sm-12">'+
-                            '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<p class="lead">'+response.descripcion+'</p>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'
-                    );
-                }
-            });
-        });
-
-        $('i.fa-pencil-square').click(function(){
-           window.location.href = '/Admin/comentarios/'+$(this).attr('value')+'/editar';
-        });
-
-         $('i.fa-trash').click(function(){
-           $('#eliminarEvento').modal('show');
-           $('form#eliminarEvento').attr('action','/admin/evento/'+$(this).attr('value')+'/eliminar');
-         });
-
-         $('.rowsTabla > th > div > button').each(function(){
-             if($(this).attr('value') == false){
+      $('.rowsTabla > th > div > button').each(function(){
+             if($(this).attr('value') == 0){
                  $(this).addClass("btn-danger");
              }
              else{
                  $(this).addClass("btn-success");
              }
          });
+
          $('.rowsTabla > th > div > button').click(function(){
              //alert($(this).attr('id'));
-             if($(this).attr('value') == false)
+             if($(this).attr('value') == 0)
              {
                  $(this).removeClass('btn-danger');
                  $(this).addClass('btn-success');
-                 $(this).attr('value',true);
+                 $(this).attr('value',1);
              }
              else{
                  $(this).removeClass('btn-success');
                  $(this).addClass('btn-danger');
-                 $(this).attr('value',false);
+                 $(this).attr('value',0);
              }
              $.ajax({
-                 url:'/admin/Comentarios/'+$(this).attr('idComentario')+'/cambiarStatus',
+                 url:'Admin/Comentarios'+$(this).attr('idComentario')+'/cambiarStatus',
                  type:'POST',
                  dataType:'json',
                  data:{
@@ -318,7 +279,10 @@
                  }
              });
          });
+
+
     });
+  
 </script>
 
 @endsection

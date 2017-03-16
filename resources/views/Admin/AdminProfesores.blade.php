@@ -271,14 +271,14 @@ $(".submenu").click(function(){
                     $('div#informacionProfesor').html(
                         '<div class="col-sm-12">'+
                             '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<p class="lead">Nombre: '+response.nombre+'</p>'+
-                                '</div>'+'<br/>'+'<br/>'+
+                                '<div class="col-sm-12 ">'+
+                                    '<p style="text-align:center;">Nombre:'+response.nombre+'</p>'+
+                                '</div>'+
                             '</div>'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
                                     '<p class="lead">Apellidos: '+response.apellidos+'</p>'+
-                                '</div>'+'<br/>'+'<br/>'+
+                                '</div>'+'<br/>'+
                             '</div>'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
@@ -297,9 +297,7 @@ $(".submenu").click(function(){
         });
 
         $('i.fa-pencil-square').click(function(){
-
            window.location.href = '/Admin/profesor/'+$(this).attr('value')+'/editar';
-
         });
 
          $('i.fa-trash').click(function(){

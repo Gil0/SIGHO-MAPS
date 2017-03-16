@@ -37,6 +37,7 @@ class UserController extends Controller
          DB::table('comentarios')->insert([
             'comentario' => $request->comentario,
             'calificacion' => $request->calificacion,
+            'status' => false
         ]);
      
        return redirect()->action('UserController@profesores');
