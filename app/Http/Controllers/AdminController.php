@@ -42,15 +42,11 @@ class AdminController extends Controller
 
     
     public function editarProfesor(Request $request, $id){
-         $profesores = DB::table('profesores')
-         ->join('formacionAcademica', 'profesores.idProfesor','=', 'formacionAcademica.idProfesor')
-         ->join('informacionLaboral', 'profesores.idProfesor','=', 'informacionLaboral.idProfesor')
-         ->select('profesores.*', 'formacionAcademica.*', 'informacionLaboral.*')
-         ->get();
-        $infoprof = DB::table('profesores')->select('*')->where('idProfesor', $id)->first();
-        //dd($infoprof);
-        return view('/Admin/EditarProfesor',['profesores'=>$profesores, 'infoProf'=>$infoprof]);
-      
+        
+        $profesor= DB::table('profesores')->select('*')->where('idProfesor', $id)->first();
+        $academica = DB::table('formacionAcademica')->select('*')->where('idProfesor',$id)->get();
+        $laboral = DB::table('informacionLaboral')->select('*')->where('idProfesor',$id)->get();
+        return view('/Admin/EditarProfesor')->with('profesores',$profesor)->with( 'academica',$academica)->with('laboral',$laboral);      
     }
 
 
