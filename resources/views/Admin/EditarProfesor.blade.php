@@ -75,7 +75,7 @@
                                     <th>{{$academica->escuela}}</th>
                                     <th>{{$academica->estudios}}</th>
                                     <th>{{$academica->periodo}}</th>
-                                    <th><i class="fa fa-pencil-square fa-2x" id="EditarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}"></i></th>
+                                    <th></th><!--<th><i class="fa fa-pencil-square fa-2x" id="EditarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}"></i></th>-->
                                     <th><i class="fa fa-trash fa-2x" id="EliminarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}" data-toggle="modal" data-target="#eliminarAcademica"></i></th>
                                 </tr>
                                 @endforeach
@@ -112,7 +112,7 @@
                                     <th>{{$laboral->lugar_trabajo}}</th>
                                     <th>{{$laboral->puesto}}</th>
                                     <th>{{$laboral->periodo}}</th>
-                                    <th><i class="fa fa-pencil-square fa-2x" id="EditarLab" aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
+                                   <th></th><!-- <th><i class="fa fa-pencil-square fa-2x" id="EditarLab" aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>-->
                                     <th><i class="fa fa-trash fa-2x" id="EliminarLab"  aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
                                 </tr>
                         @endforeach
