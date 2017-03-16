@@ -60,7 +60,14 @@ class AdminController extends Controller
          return redirect()->action('AdminController@editarProfesor',$request->idProfesor);
      }
 
-
+     public function eliminarInfoAcademica(Request $request, $id){
+         DB::table('formacionAcademica')->where('idFormacionAcademica', $id)->delete();
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+     }
+     public function eliminarInfoLaboral(Request $request, $id){
+         DB::table('informacionLaboral')->where('idInformacionLaboral', $id)->delete();
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+     }
     
     public function editarProfesor(Request $request, $id){
         

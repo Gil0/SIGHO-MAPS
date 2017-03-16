@@ -32,7 +32,8 @@ Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => '
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin', 'uses' => 'AdminController@guardarCambiosProfesor']);
 Route::post('/admin/profesor/infoLaboral/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoLaboral']);
 Route::post('/admin/profesor/infoAcademica/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoAcademica']);
-
+Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoAcademica']);
+Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
 
 
 
