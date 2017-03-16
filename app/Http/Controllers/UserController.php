@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 
 class UserController extends Controller
@@ -27,6 +27,21 @@ class UserController extends Controller
     {
         //
     }
+
+      public function profesores(){
+         $profesores = DB::table('profesores')->select('*')->get();
+        return view('/User/UserProfesores',['profesores'=>$profesores]);
+     }
+
+      public function crearComentario(Request $request){
+         DB::table('comentarios')->insert([
+            'comentario' => $request->comentario,
+            'calificacion' => $request->calificacion,
+        ]);
+     
+       return redirect()->action('UserController@profesores');
+     }
+
 
     /**
      * Store a newly created resource in storage.

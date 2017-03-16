@@ -7,94 +7,120 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{$evento->nombre}}
-                </div>
+                    Información Personal
+                       </div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="/admin/profesor/{{$profesores->idProfesor}}/guardarCambios" method="POST">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Nombre</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nombreEvento" value="{{$evento->nombre}}">
+                            <input type="text" class="form-control" id="nombreProfesor" name="nombreProfesor" value="{{$profesores->nombre}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Lugar</label>
+                            <label class="col-sm-2 control-label">Apellidos</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="lugarEvento" value="{{$evento->lugar}}">
+                            <input type="text" class="form-control" id="apellidoProfesor" name="apellidoProfesor" value="{{$profesores->apellidos}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Inicio Registro</label>
+                            <label class="col-sm-2 control-label">Cubiculo</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="inicioRegistroEvento" value="{{$evento->inicioRegistro}}">
+                            <input type="text" class="form-control" id="cubiculoProfesor" name="cubiculoProfesor" value="{{$profesores->cubiculo}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Fin Registro</label>
+                            <label class="col-sm-2 control-label">Correo Electronico</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="finRegistroEvento" value="{{$evento->fin_registro}}">
+                            <input type="email" class="form-control" id="emailProfesor" name="emailProfesor" value="{{$profesores->correoElectronico}}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Inicio Evento</label>
-                            <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="inicioEvento" value="{{$evento->inicio_evento}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Fin Registro</label>
-                            <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="finEvento" value="{{$evento->fin_evento}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Descripcion</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" id="descripcionEvento" rows="10">{{$evento->descripcion}}</textarea>
-                            </div>
-                        </div>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
-                                <button id="guardarCambios" type="button" class="btn btn-primary form-control" >Guardar Cambios</button>
+                                <button id="guardarCambios" type="submit" class="btn btn-primary form-control" >Guardar Cambios</button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>
+         
+    <div class="panel panel-default">
+                <div class="panel-heading">
+                   Información Académica
+                </div>
+                <div class="panel-heading">
+        <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionAcademica">Nueva Informacion Academica</button>
+    </div>
+        
+    <div class="panel-body">
+        <table class="table table-striped">
+                        <thread>
+                            <tr>
+                                <th>#</th>
+                                <th>Escuela</th>
+                                <th>Estudios</th>
+                                <th>Periodo</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                                @foreach($academica as $academica)
+                                <tr>
+                                    <th scope="row">{{$academica->idFormacionAcademica}}</th>
+                                    <th>{{$academica->escuela}}</th>
+                                    <th>{{$academica->estudios}}</th>
+                                    <th>{{$academica->periodo}}</th>
+                                    <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
+                                    <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
+                                </tr>
+                                @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          <div class="panel panel-default">
+                <div class="panel-heading">
+                   Información Laboral
+                </div>
+                
+                <div class="panel-heading">
+        <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionLaboral">Nueva Informacion Laboral</button>
+    </div>
+     
+    <div class="panel-body">
+        <table class="table table-striped">
+                        <thread>
+                            <tr>
+                                <th>#</th>
+                                <th>Lugar de Trabajo</th>
+                                <th>Puesto</th>
+                                <th>Periodo</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                        @foreach($laboral as $laboral)
+                                <tr>
+                                    <th scope="row">{{$laboral->idInformacionLaboral}}</th>
+                                    <th>{{$laboral->lugar_trabajo}}</th>
+                                    <th>{{$laboral->puesto}}</th>
+                                    <th>{{$laboral->periodo}}</th>
+                                    <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$laboral->idProfesor}}"></i></th>
+                                    <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$laboral->idProfesor}}"></i></th>
+                                </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+      
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-       $('button#guardarCambios').click(function(){
-            $.ajax({
-                url : '/admin/evento/{{$evento->id}}/guardarCambios',
-                type: 'POST',
-                dataType : 'text',
-                data:{
-                    'nombre' : $('input#nombreEvento').val(),
-                    'lugar'  : $('input#lugarEvento').val(),
-                    'inicioRegistro' : $('input#inicioRegistroEvento').val(),
-                    'fin_registro'   : $('input#finRegistroEvento').val(),
-                    'inicio_evento'  : $('input#inicioEvento').val(),
-                    'fin_evento'     : $('input#finEvento').val(),
-                    'descripcion'    : $('textarea#descripcionEvento').val()
-                },
-                beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
-                    var token = $('meta[name="csrf_token"]').attr('content');
-
-                    if (token) {
-                        return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                    }
-                },
-                success:function(response){
-                    alert(response);
-                     window.location.href = '/admin/eventos';
-                }
-            });
-        });
-    });
-</script>
 
 @endsection
