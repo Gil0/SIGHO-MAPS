@@ -30,7 +30,12 @@ Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'Admin
 Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
 Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin', 'uses' => 'AdminController@guardarCambiosProfesor']);
-
+Route::post('/admin/profesor/infoLaboral/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoLaboral']);
+Route::post('/admin/profesor/infoAcademica/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoAcademica']);
+Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoAcademica']);
+Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
+Route::post('/admin/profesor/infoAcademica/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoAcademica']);
+Route::post('/admin/profesor/infoLaboral/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoLaboral']);
 
 
 

@@ -42,6 +42,34 @@ class AdminController extends Controller
        return redirect()->action('AdminController@profesores');
      }
 
+     public function infoAcademica(Request $request){
+         DB::table('formacionAcademica')->insert([
+             'escuela' => $request->escuela,
+             'estudios' => $request->estudios,
+             'periodo' =>$request->periodo,
+             'idProfesor' =>$request->idProfesor
+         ]);
+         return redirect()->action('AdminController@editarProfesor',$request->idProfesor);
+     }
+     
+     public function infoLaboral(Request $request){
+         DB::table('informacionLaboral')->insert([
+             'lugar_trabajo' => $request->lugar_trabajo,
+             'puesto' => $request->puesto,
+             'periodo' =>$request->periodo,
+             'idProfesor' =>$request->idProfesor
+         ]);
+         return redirect()->action('AdminController@editarProfesor',$request->idProfesor);
+     }
+
+     public function eliminarInfoAcademica(Request $request, $id){
+         DB::table('formacionAcademica')->where('idFormacionAcademica', $id)->delete();
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+     }
+     public function eliminarInfoLaboral(Request $request, $id){
+         DB::table('informacionLaboral')->where('idInformacionLaboral', $id)->delete();
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+     }
     
     public function editarProfesor(Request $request, $id){
 
@@ -53,6 +81,24 @@ class AdminController extends Controller
 
     }
 
+     public function editarInfoAcademica(Request $request, $id){
+        DB::table('formacionAcademica')->where('idFormacionAcademica',$id)->update([
+            'escuela' => $request->escuela,
+            'estudios'  => $request->estudios,
+            'periodo' => $request->periodo,
+            ]);
+        return redirect()->action('AdminController@editarProfesores', $request->idProfesor);
+    }
+
+
+    public function editarInfoLaboral(Request $request, $id){
+        DB::table('informacionLaboral')->where('idInformacionLaboral', $id)->update([
+            'lugar_trabajo' => $request->lugar_trabajo,
+            'puesto' => $request->puesto,
+            'periodo' => $request->periodo
+        ]);
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+    }
 
     public function eliminarProfesor(Request $request, $id)
     {
