@@ -69,7 +69,9 @@
                             </tr>
                         </thread>
                         <tbody>
-                         @foreach($academica as $academica)
+                        
+                        @if(!empty($academica))
+                            @foreach($academica as $academica)
                                 <tr>
                                     <th scope="row">{{$academica->idFormacionAcademica}}</th>
                                     <th>{{$academica->escuela}}</th>
@@ -79,6 +81,7 @@
                                     <th><i class="fa fa-trash fa-2x" id="EliminarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}" data-toggle="modal" data-target="#eliminarAcademica"></i></th>
                                 </tr>
                                 @endforeach
+                          @endif      
                         </tbody>
                     </table>
                 </div>
@@ -106,6 +109,7 @@
                             </tr>
                         </thread>
                         <tbody>
+                        @if(!empty($laboral))
                         @foreach($laboral as $laboral)
                                 <tr>
                                     <th scope="row">{{$laboral->idInformacionLaboral}}</th>
@@ -116,6 +120,7 @@
                                     <th><i class="fa fa-trash fa-2x" id="EliminarLab"  aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
                                 </tr>
                         @endforeach
+                        @endif
                         </tbody>
                     </table>
                 </div>
