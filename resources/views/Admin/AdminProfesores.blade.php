@@ -143,7 +143,7 @@
                                 <th scope="row">{{$profesores->idProfesor}}</th>
                                 <th>{{$profesores->nombre}}</th>
                                 <th>{{$profesores->apellidos}}</th>
-                                <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
+                                <th><!--<i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i>--></th>
                                 <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                 <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                             </tr>
