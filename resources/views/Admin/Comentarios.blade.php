@@ -262,7 +262,7 @@
                  $(this).attr('value',0);
              }
              $.ajax({
-                 url:'Admin/Comentarios'+$(this).attr('idComentario')+'/cambiarStatus',
+                 url:'Admin/Comentarios/'+$(this).attr('idComentario')+'/cambiarStatus',
                  type:'POST',
                  dataType:'json',
                  data:{

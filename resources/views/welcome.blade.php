@@ -144,18 +144,18 @@
     </div>
     <div class="container">
         <ul class="nav nav-pills">
-          <li class="select "><a class="nav1"href="#">Inicio</a></li>
+          <li class="select "><a class="nav1"href="{{url ('/')}}">Inicio</a></li>
           @if(!Auth::guest())
-               @if(Auth::user()->is_admin == True)
-                  <li><a class="nav1" href="{{url ('Admin/Profesores')}}">Profesores</a></li>
-                  <li><a class="nav1"href="#">Mapas</a></li>
-               @else
-                    <li><a class="nav1"href="#">Profesores</a></li>
+                @if(Auth::user()->is_admin == True)
+                    <li><a class="nav1" href="{{url ('Admin/Profesores')}}">Profesores</a></li>
                     <li><a class="nav1"href="#">Mapas</a></li>
+                @else
                     <li><a class="nav1"href="#">Horarios</a></li>
+                    <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
+                    <li><a class="nav1"href="#">Mapas</a></li>
                 @endif
             @else
-            <li><a class="nav1"href="#">Profesores</a></li>
+            <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
             <li><a class="nav1"href="#">Mapas</a></li>
         @endif
             
