@@ -30,6 +30,9 @@ Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'Admin
 Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
 Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin', 'uses' => 'AdminController@guardarCambiosProfesor']);
+Route::post('/admin/profesor/infoLaboral/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoLaboral']);
+Route::post('/admin/profesor/infoAcademica/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoAcademica']);
+
 
 
 

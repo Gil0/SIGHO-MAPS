@@ -40,6 +40,27 @@ class AdminController extends Controller
        return redirect()->action('AdminController@profesores');
      }
 
+     public function infoAcademica(Request $request){
+         DB::table('formacionAcademica')->insert([
+             'escuela' => $request->escuela,
+             'estudios' => $request->estudios,
+             'periodo' =>$request->periodo,
+             'idProfesor' =>$request->idProfesor
+         ]);
+         return redirect()->action('AdminController@editarProfesor',$request->idProfesor);
+     }
+     
+     public function infoLaboral(Request $request){
+         DB::table('informacionLaboral')->insert([
+             'lugar_trabajo' => $request->lugar_trabajo,
+             'puesto' => $request->puesto,
+             'periodo' =>$request->periodo,
+             'idProfesor' =>$request->idProfesor
+         ]);
+         return redirect()->action('AdminController@editarProfesor',$request->idProfesor);
+     }
+
+
     
     public function editarProfesor(Request $request, $id){
         
