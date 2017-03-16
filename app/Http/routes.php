@@ -18,3 +18,53 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+////////////////Admin
+Route::get('Admin/Home', function(){
+	return view('/Admin/AdminHome');
+});
+//Profesores
+
+Route::get('/Admin/Profesores',  ['middleware' => 'admin', 'uses' => 'AdminController@profesores']);
+Route::post('/admin/profesor/crear',  ['middleware' => 'admin', 'uses' => 'AdminController@crearprofesores']);
+Route::post('/admin/profesores/{id}/eliminar',['middleware' => 'admin', 'uses' => 'AdminController@eliminarProfesor']);
+Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
+Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin', 'uses' => 'AdminController@guardarCambiosProfesor']);
+Route::post('/admin/profesor/infoLaboral/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoLaboral']);
+Route::post('/admin/profesor/infoAcademica/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoAcademica']);
+Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoAcademica']);
+Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
+Route::post('/admin/profesor/infoAcademica/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoAcademica']);
+Route::post('/admin/profesor/infoLaboral/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoLaboral']);
+
+
+
+////////////////User
+
+//Vista del index de usuario
+Route::get('User/Home', function(){
+	return view('/User/UserHome');
+});
+//Profesores
+Route::get('User/Profesores', function(){
+	return view('/User/UserProfesores');
+});
+/*Route::get('/homeu', function(){
+	return view('/User/homeu');
+});*/
+
+
+Route::get('/User/Profesores',  ['middleware', 'uses' => 'UserController@profesores']);
+
+Route::post('/user/comentario/crear',  ['middleware' , 'uses' => 'UserController@crearComentario']);
+
+Route::get('/Admin/Comentarios',  ['middleware' => 'admin', 'uses' => 'AdminController@comentarios']);
+
+Route::post('/admin/comentarios/{id}/cambiarStatus',['middleware' => 'admin', 'uses' => 'AdminController@cambiarStatus']);
+
+
+Route::get('/admin/Profesores/{id}/editar',['middleware' => 'admin', 'uses' => 'AdminController@editarProfesor']);
+
+Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
+
+Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
