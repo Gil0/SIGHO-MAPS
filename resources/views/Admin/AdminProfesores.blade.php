@@ -253,7 +253,6 @@ $(".submenu").click(function(){
 
 <script>
     $(document).ready(function(){
-
         $('i.fa-plus-circle').click(function(){
            $('#verProfesor').modal('show'); 
 
