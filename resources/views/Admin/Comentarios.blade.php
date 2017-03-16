@@ -49,10 +49,6 @@
         letter-spacing: 2px;
         font-size: 70px;
     }
-    /*----- Panel -----*/
-    .panelesp{
-        top: 20px;
-    }
     /*----- Menu -----*/
     @media (min-width: 768px) {
         .sidebar-nav .navbar .navbar-collapse {
@@ -80,80 +76,86 @@
     <a href="{{ url('/') }}"><p class="logo">SIGHO <span class="log">&</span> MAPS</p></a>
 </div>
 <div>
-    <div class="col-sm-12">
-        <div class="">
-            <div class="col-sm-3">
-                <div class="sidebar-nav">
-                    <div class="navbar navbar-default" role="navigation">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <span class="visible-xs navbar-brand">Menu</span>
-                        </div>
-                        <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="{{url ('/')}}">Inicio</a></li>
-                                <li><a href="#">Horario</a></li>
-                                <li class="active"><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
-                                <li><a href="#">Mapas</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  <div class="col-sm-12">
+    <div class="">
+      <div class="col-sm-3">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="visible-xs navbar-brand">Menu</span>
             </div>
-            <div class="col-sm-9">
-                <div>
-                    <p class="profesor">Profesores</p>
-                </div>
-                <div>
-                    <div class="col-sm-8 buscador">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Buscar</button>
-                            </span>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="panelesp">
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thread>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Ver mas</th>
-                                    <th>Escribir comentario</th>
-                                    <th></th>
-                                </tr>
-                            </thread>
-                            <tbody>
-                                @foreach($profesores as $profesores)
-                                <tr>
-                                    <th scope="row">{{$profesores->idProfesor}}</th>
-                                    <th>{{$profesores->nombre}}</th>
-                                    <th>{{$profesores->apellidos}}</th>
-                                    <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
-                                    <th>
-                                        <div class="panel-heading">
-                                            <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
-                                        </div>
-                                    </th>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{{url ('/')}}">Inicio</a></li>
+                <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                  <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                </ul>
+                </li>
+                <li><a href="#">Materias</a></li>
+                <li><a href="#">Mapas</a></li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-9">
+        <div>
+          <p class="profesor">Comentarios</p>
+        </div>
+        <div>
+          <div class="col-sm-8 buscador">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Buscar</button>
+              </span>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thread>
+              <tr>
+                <th>#</th>
+                <th>Comentario</th>
+                <th>Calificacion</th>
+                <th class="text-center">Status</th>
+              </tr>
+            </thread>
+            <tbody>
+              @foreach($comentarios as $comentarios)
+              <tr>
+                <th scope="row">{{$comentarios->idComentario}}</th>
+                <th>{{$comentarios->comentario}}</th>
+                <th>{{$comentarios->calificacion}}</th>
+                <th class="text-center">
+                <!-- Single button -->
+                <div class="btn-group">
+                  <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentario->id}}" value="{{$comentario->status}}">
+                    <i class="fa fa-bullseye" aria-hidden="true"></i>
+                  </button>
+                </div>
+                </th>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+<!-- modal Nuevo Profesor-->
 <div class="modal fade" id="nuevoComentario" tabindex="-1" role="dialog" aria-labelledby="Nuevo comentario">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -189,15 +191,17 @@
     </div>
   </div>
 </div>
-       
+
+
+
 <script>
     $(document).ready(function(){
 
         $('i.fa-plus-circle').click(function(){
-           $('#verProfesor').modal('show'); 
+           $('#verEvento').modal('show');
 
             $.ajax({
-                url : '/admin/profesor/'+$(this).attr('value')+'/getInformacion',
+                url : '/admin/evento/'+$(this).attr('value')+'/getInformacion',
                 type : 'GET',
                 dataType : 'json',
                 beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
@@ -226,16 +230,55 @@
         });
 
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+           window.location.href = '/Admin/comentarios/'+$(this).attr('value')+'/editar';
         });
 
          $('i.fa-trash').click(function(){
-           $('#eliminarProfesor').modal('show');
-           $('form#eliminarProfesor').attr('action','/admin/profesores/'+$(this).attr('value')+'/eliminar');
+           $('#eliminarEvento').modal('show');
+           $('form#eliminarEvento').attr('action','/admin/evento/'+$(this).attr('value')+'/eliminar');
          });
 
+         $('.rowsTabla > th > div > button').each(function(){
+             if($(this).attr('value') == false){
+                 $(this).addClass("btn-danger");
+             }
+             else{
+                 $(this).addClass("btn-success");
+             }
+         });
+         $('.rowsTabla > th > div > button').click(function(){
+             //alert($(this).attr('id'));
+             if($(this).attr('value') == false)
+             {
+                 $(this).removeClass('btn-danger');
+                 $(this).addClass('btn-success');
+                 $(this).attr('value',true);
+             }
+             else{
+                 $(this).removeClass('btn-success');
+                 $(this).addClass('btn-danger');
+                 $(this).attr('value',false);
+             }
+             $.ajax({
+                 url:'/admin/Comentarios/'+$(this).attr('idComentario')+'/cambiarStatus',
+                 type:'POST',
+                 dataType:'json',
+                 data:{
+                     'status': $(this).attr('value')
+                 },beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
+                    var token = $('meta[name="csrf_token"]').attr('content');
 
+                    if (token) {
+                        return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                    }
+                },
+                 success:function(response){
+                     //alert(response);
+                 }
+             });
+         });
     });
-
 </script>
+
 @endsection
+

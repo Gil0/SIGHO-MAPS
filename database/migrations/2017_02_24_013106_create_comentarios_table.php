@@ -20,7 +20,7 @@ class CreateComentariosTable extends Migration
             $table->dateTime('fecha')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->integer('idProfesor');
             $table->integer('idUsuario');
-            $table->boolean('status');
+            $table->boolean('status',false);
 
 
             $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
