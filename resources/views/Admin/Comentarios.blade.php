@@ -161,8 +161,6 @@
                                 <th class="head">Id</th>
                                 <th class="head">Comentario</th>
                                 <th class="head">Calificacion</th>
-                                <th class="head"></th>
-                                <th class="head"></th>
                                 <th class="head text-center">Status</th>
                             </tr>
                         </thread>
