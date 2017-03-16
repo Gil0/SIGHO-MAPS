@@ -75,7 +75,7 @@
                                     <th>{{$academica->escuela}}</th>
                                     <th>{{$academica->estudios}}</th>
                                     <th>{{$academica->periodo}}</th>
-                                    <th><i class="fa fa-pencil-square fa-2x aca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}"></i></th>
+                                    <th><i class="fa fa-pencil-square fa-2x" id="EditarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}"></i></th>
                                     <th><i class="fa fa-trash fa-2x" id="EliminarAca" aria-hidden="true" value="{{$academica->idFormacionAcademica}}" data-toggle="modal" data-target="#eliminarAcademica"></i></th>
                                 </tr>
                                 @endforeach
@@ -112,7 +112,7 @@
                                     <th>{{$laboral->lugar_trabajo}}</th>
                                     <th>{{$laboral->puesto}}</th>
                                     <th>{{$laboral->periodo}}</th>
-                                    <th><i class="fa fa-pencil-square fa-2x lab" aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
+                                    <th><i class="fa fa-pencil-square fa-2x" id="EditarLab" aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
                                     <th><i class="fa fa-trash fa-2x" id="EliminarLab"  aria-hidden="true" value="{{$laboral->idInformacionLaboral}}"></i></th>
                                 </tr>
                         @endforeach
@@ -148,7 +148,6 @@
   </div>
 </div>
 
-
 <div class="modal fade" id="nuevoLaboral" tabindex="-1" role="dialog" aria-labelledby="Nueva Informacion Laboral">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -157,7 +156,7 @@
         <h4 class="modal-title" id="myModalLabel">Nueva Informacion Laboral</h4>
       </div>
       <form action="/admin/profesor/infoLaboral/crear" method="POST">
-      {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
+      {{!! csrf_field() !!}} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="Lugar de trabajo" name="lugar_trabajo" required><br>
             <input type="text" class="form-control" placeholder="Puesto" name="puesto" required><br>
@@ -172,6 +171,58 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="editarInfoAcademicaModal" tabindex="-1" role="dialog" aria-labelledby="Editar Informacion Academica">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Informacion Academica</h4>
+      </div>
+      <form action="" method="POST">
+      {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
+        <div class="modal-body">
+            <input type="text" class="form-control" value="{{$academica->escuela}}" name="escuela" required><br>
+            <input type="text" class="form-control" value="{{$academica->estudios}}" name="estudios" required><br>
+            <input type="text" class="form-control" value="{{$academica->periodo}}" name="periodo" required><br>
+            <input type="hidden" value="{{$profesores->idProfesor}}" name="idProfesor">
+             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
+            <button type="submit" class="btn btn-primary" id="crearInfoAcademica">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editarInfoLaboralModal" tabindex="-1" role="dialog" aria-labelledby="Editar Informacion Laboral">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Informacion Laboral</h4>
+      </div>
+      <form action="" method="POST">
+      {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
+        <div class="modal-body">
+            <input type="text" class="form-control" value="{{$laboral->lugar_trabajo}}" name="lugar_trabajo" required><br>
+            <input type="text" class="form-control" value="{{$laboral->puesto}}" name="puesto" required><br>
+            <input type="text" class="form-control" value="{{$laboral->periodo}}" name="periodo" required><br>
+            <input type="hidden" value="{{$profesores->idProfesor}}" name="idProfesor">
+             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
+            <button type="submit" class="btn btn-primary" id="crearInfoAcademica">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 
 
 <div class="modal fade" id="eliminarInfoAcademicaModal" tabindex="-1" role="dialog" aria-labelledby="Eliminar Informacion Academica">
@@ -193,7 +244,7 @@
 </div>
 
 
-<div class="modal fade" id="eliminarLaboral" tabindex="-1" role="dialog" aria-labelledby="Eliminar Informacion Laboral">
+<div class="modal fade" id="eliminarInfoLaboralModal" tabindex="-1" role="dialog" aria-labelledby="Eliminar Informacion Laboral">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -220,41 +271,15 @@ $(".submenu").click(function(){
 
 <script>
     $(document).ready(function(){
-
-        $('i.fa-plus-circle').click(function(){
-           $('#verProfesor').modal('show'); 
-
-            $.ajax({
-                url : '/admin/profesor/'+$(this).attr('value')+'/getInformacion',
-                type : 'GET',
-                dataType : 'json',
-                beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
-                    var token = $('meta[name="csrf_token"]').attr('content');
-                    if (token) {
-                          return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                     }
-               },
-                success:function(response){
-                    $('div#informacionEvento').html(
-                        '<div class="col-sm-12">'+
-                            '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<p class="lead">'+response.descripcion+'</p>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'
-                    );
-                }
-            });
+        $('i#EditarAca').click(function(){
+            $('#editarInfoAcademicaModal').modal('show');
+            $('form#editarInfoAcademica').attr('action','/admin/profesor/infoAcademica/'+$(this).attr('value')+'/editar');
+            $('form#editarInfoAcademica').attr('method','post');
         });
-
-        $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+        $('i#EditarLab').click(function(){
+            $('#editarInfoLaboralModal').modal('show');
+            $('form#editarInfoLaboral').attr('action','/admin/profesor/infoLaboral/'+$(this).attr('value')+'/editar');
+             $('form#editarInfoAcademica').attr('method','post');
         });
 
          $('i#EliminarAca').click(function(){
@@ -262,8 +287,8 @@ $(".submenu").click(function(){
            $('form#eliminarInfoAcademica').attr('action','/admin/profesor/academica/'+$(this).attr('value')+'/eliminar');
          });
          $('i#EliminarLab').click(function(){
-           $('#eliminarInfoAcademicaModal').modal('show');
-           $('form#eliminarInfoAcademica').attr('action','/admin/profesor/laboral/'+$(this).attr('value')+'/eliminar');
+           $('#eliminarInfoLaboralModal').modal('show');
+           $('form#eliminarInfoLaboral').attr('action','/admin/profesor/laboral/'+$(this).attr('value')+'/eliminar');
          });
 
 

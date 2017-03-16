@@ -34,7 +34,8 @@ Route::post('/admin/profesor/infoLaboral/crear',['middleware' => 'admin', 'uses'
 Route::post('/admin/profesor/infoAcademica/crear',['middleware' => 'admin', 'uses' => 'AdminController@infoAcademica']);
 Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoAcademica']);
 Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
-
+Route::post('/admin/profesor/infoAcademica/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoAcademica']);
+Route::post('/admin/profesor/infoLaboral/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoLaboral']);
 
 
 

@@ -77,6 +77,24 @@ class AdminController extends Controller
         return view('/Admin/EditarProfesor')->with('profesores',$profesor)->with( 'academica',$academica)->with('laboral',$laboral);      
     }
 
+     public function editarInfoAcademica(Request $request, $id){
+        DB::table('formacionAcademica')->where('idFormacionAcademica',$id)->update([
+            'escuela' => $request->escuela,
+            'estudios'  => $request->estudios,
+            'periodo' => $request->periodo,
+            ]);
+        return redirect()->action('AdminController@editarProfesores', $request->idProfesor);
+    }
+
+
+    public function editarInfoLaboral(Request $request, $id){
+        DB::table('informacionLaboral')->where('idInformacionLaboral', $id)->update([
+            'lugar_trabajo' => $request->lugar_trabajo,
+            'puesto' => $request->puesto,
+            'periodo' => $request->periodo
+        ]);
+         return redirect()->action('AdminController@editarProfesor', $request->idProfesor);
+    }
 
     public function eliminarProfesor(Request $request, $id)
     {
