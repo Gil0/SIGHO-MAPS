@@ -49,7 +49,6 @@
     <div class="panel panel-default">
                 <div class="panel-heading">
                    Información Académica
-                   @foreach($academica as $academica)
                 </div>
                 <div class="panel-heading">
         <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionAcademica">Nueva Informacion Academica</button>
@@ -68,6 +67,7 @@
                             </tr>
                         </thread>
                         <tbody>
+                                @foreach($academica as $academica)
                                 <tr>
                                     <th scope="row">{{$academica->idFormacionAcademica}}</th>
                                     <th>{{$academica->escuela}}</th>
@@ -76,11 +76,12 @@
                                     <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
                                     <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
                                 </tr>
+                                @endforeach
+
                         </tbody>
                     </table>
                 </div>
             </div>
-            @endforeach
           <div class="panel panel-default">
                 <div class="panel-heading">
                    Información Laboral
