@@ -143,7 +143,7 @@
                                 <th scope="row">{{$profesores->idProfesor}}</th>
                                 <th>{{$profesores->nombre}}</th>
                                 <th>{{$profesores->apellidos}}</th>
-                                <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
+                                <th><!--<i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i>--></th>
                                 <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                 <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                             </tr>
@@ -214,7 +214,6 @@
        
 <script>
     $(document).ready(function(){
-
         $('i.fa-plus-circle').click(function(){
            $('#verProfesor').modal('show'); 
 
@@ -232,9 +231,14 @@
                     $('div#informacionEvento').html(
                         '<div class="col-sm-12">'+
                             '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
+                                '<div class="col-sm-12 ">'+
+                                    '<p style="text-align:center;">Nombre:'+response.nombre+'</p>'+
                                 '</div>'+
+                            '</div>'+
+                            '<div class="row">'+
+                                '<div class="col-sm-12">'+
+                                    '<p class="lead">Apellidos: '+response.apellidos+'</p>'+
+                                '</div>'+'<br/>'+
                             '</div>'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
@@ -248,7 +252,9 @@
         });
 
         $('i.fa-pencil-square').click(function(){
+
            window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+
         });
 
          $('i.fa-trash').click(function(){
