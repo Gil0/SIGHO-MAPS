@@ -56,7 +56,7 @@ Route::get('User/Profesores', function(){
 
 Route::get('/User/Profesores',  ['middleware', 'uses' => 'UserController@profesores']);
 
-Route::post('/user/comentario/crear',  ['middleware' , 'uses' => 'UserController@crearComentario']);
+Route::post('/user/comentario/crear/{id}',  ['middleware' , 'uses' => 'UserController@crearComentario']);
 
 Route::get('/Admin/Comentarios',  ['middleware' => 'admin', 'uses' => 'AdminController@comentarios']);
 

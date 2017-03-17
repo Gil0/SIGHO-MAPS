@@ -33,11 +33,12 @@ class UserController extends Controller
         return view('/User/UserProfesores',['profesores'=>$profesores]);
      }
 
-      public function crearComentario(Request $request){
+      public function crearComentario(Request $request, $id){
          DB::table('comentarios')->insert([
             'comentario' => $request->comentario,
             'calificacion' => $request->calificacion,
-            'status' => false
+            'status' => false,
+            'idProfesor' => $id,
         ]);
      
        return redirect()->action('UserController@profesores');
