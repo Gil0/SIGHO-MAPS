@@ -97,12 +97,12 @@
                 <li><a href="{{url ('/')}}">Inicio</a></li>
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li class="active"><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
-                    <li><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                    <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                    <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Materias</a></li>
-                <li><a href="#">Mapas</a></li>
+                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
               </ul>
             </div>
           </div>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="panel-body">
-          <table class="table table-striped">
+          <table class="table table-hover">
             <thread>
               <tr>
                 <th class="head">Id</th>

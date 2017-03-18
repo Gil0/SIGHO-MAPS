@@ -68,3 +68,8 @@ Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => '
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
 
 Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
+
+/////////Mapas
+Route::get('/Mapas', function(){
+	return view('mapas');
+});

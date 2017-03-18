@@ -99,7 +99,7 @@
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
                                 <li><a href="#">Horario</a></li>
                                 <li class="active"><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
-                                <li><a href="#">Mapas</a></li>
+                                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
                             </ul>
                         </div>
                     </div>

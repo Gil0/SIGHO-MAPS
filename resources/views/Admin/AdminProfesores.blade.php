@@ -100,7 +100,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">Materias</a></li>
-                                <li><a href="#">Mapas</a></li>
+                                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
                             </ul>
                         </div>
                     </div>
@@ -125,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                <div>
                 <div class="panel-body">
                     <table class="table table-hover">
                         <thread>

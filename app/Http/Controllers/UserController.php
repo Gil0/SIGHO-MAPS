@@ -44,7 +44,7 @@ class UserController extends Controller
        return redirect()->action('UserController@profesores');
      }
 
-
+     
     /**
      * Store a newly created resource in storage.
      *
