@@ -136,87 +136,211 @@
                 </div>
                 <div class="col-sm-12">
                     <div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <div>
                                 <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div>
-                                <p class="edif">CC01</p>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC011">Sótano</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC012">Planta baja</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC013">Primer piso</button>
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>CC01</h3>
+                                    <table class="table table-hover">
+                                        <thread>
+                                            <tr>
+                                                <th class="head">Nombre</th>
+                                                <th class="head">Salones</th>
+                                                <th class="head">Ver más</th>
+                                            </tr>
+                                        </thread>
+                                        <tbody>
+                                            <tr>
+                                                <th>Sótano</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC011">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Planta baja</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC012">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Primer piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC013">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <div>
                                 <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div>
-                                <p class="edif">CC02</p>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC021">Planta baja</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC022">Primer piso</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC023">Segundo piso</button>
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>CC02</h3>
+                                    <table class="table table-hover">
+                                        <thread>
+                                            <tr>
+                                                <th class="head">Nombre</th>
+                                                <th class="head">Salones</th>
+                                                <th class="head">Ver más</th>
+                                            </tr>
+                                        </thread>
+                                        <tbody>
+                                            <tr>
+                                                <th>Planta baja</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC021">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Primer piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC022">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Segundo piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC023">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <div>
                                 <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div>
-                                <p class="edif">CC03</p>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC031">Planta baja</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC032">Primer piso</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC033">Segundo piso</button>
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>CC03</h3>
+                                    <table class="table table-hover">
+                                        <thread>
+                                            <tr>
+                                                <th class="head">Nombre</th>
+                                                <th class="head">Salones</th>
+                                                <th class="head">Ver más</th>
+                                            </tr>
+                                        </thread>
+                                        <tbody>
+                                            <tr>
+                                                <th>Planta baja</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC031">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Primer piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC032">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Segundo piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC033">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <hr/>
                     <div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <div>
                                 <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div>
-                                <p class="edif">CC04</p>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC041">Planta baja</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC042">Primer piso</button>
-                            </div>
-                            <div class="panel-heading">
-                                <button class="btn btn-outline-success center-block" style="width:50%;" data-toggle="modal" data-target="#CC043">Segundo piso</button>
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>CC04</h3>
+                                    <table class="table table-hover">
+                                        <thread>
+                                            <tr>
+                                                <th class="head">Nombre</th>
+                                                <th class="head">Salones</th>
+                                                <th class="head">Ver más</th>
+                                            </tr>
+                                        </thread>
+                                        <tbody>
+                                            <tr>
+                                                <th>Planta baja</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC041">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Primer piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC042">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Segundo piso</th>
+                                                <th>101-104</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC043">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -227,7 +351,7 @@
 </div>
 
 <!-- Edificio CC01-->
-<div class="modal fade" id="CC011" tabindex="-1" role="dialog" aria-labelledby="Nuevo Profesor">
+<div class="modal fade" id="CC011" tabindex="-1" role="dialog" aria-labelledby="Ver más">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

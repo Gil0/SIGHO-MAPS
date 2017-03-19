@@ -49,6 +49,15 @@
         letter-spacing: 2px;
         font-size: 70px;
     }
+    /*----- Iconos -----*/
+    .iconpencil{
+        color: #5cb85c;
+        border-color: #4cae4c;
+    }
+    .icondelete{
+        color: #d9534f;
+        border-color: #d43f3a;
+    }
     /*----- Menu -----*/
     @media (min-width: 768px) {
         .sidebar-nav .navbar .navbar-collapse {
@@ -126,31 +135,34 @@
                     </div>
                 </div>
                 <div>
-                <div class="panel-body">
-                    <table class="table table-hover">
-                        <thread>
-                            <tr>
-                                <th>#</th>
-                                <th>nombre</th>
-                                <th>apellidos</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thread>
-                        <tbody>
-                            @foreach($profesores as $profesores)
-                            <tr>
-                                <th scope="row">{{$profesores->idProfesor}}</th>
-                                <th>{{$profesores->nombre}}</th>
-                                <th>{{$profesores->apellidos}}</th>
-                                <th><!--<i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i>--></th>
-                                <th><i class="fa fa-pencil-square fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
-                                <th><i class="fa fa-trash fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thread>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>nombre</th>
+                                        <th>apellidos</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thread>
+                                <tbody>
+                                    @foreach($profesores as $profesores)
+                                    <tr>
+                                        <th scope="row">{{$profesores->idProfesor}}</th>
+                                        <th>{{$profesores->nombre}}</th>
+                                        <th>{{$profesores->apellidos}}</th>
+                                        <th><!--<i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i>--></th>
+                                        <th><i class="fa fa-pencil-square fa-2x iconpencil" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
+                                        <th><i class="fa fa-trash fa-2x icondelete" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -127,34 +127,36 @@
             </div>
           </div>
         </div>
-        <div class="panel-body">
-          <table class="table table-hover">
-            <thread>
-              <tr>
-                <th class="head">Id</th>
-                <th class="head">Comentario</th>
-                <th class="head">Calificacion</th>
-                <th class="head text-center">Status</th>
-              </tr>
-            </thread>
-            <tbody>
-            @foreach($comentarios as $comentarios)
-              <tr class="rowsTabla">
-                <th scope="row">{{$comentarios->idComentario}}</th>
-                <th>{{$comentarios->comentario}}</th>
-                <th>{{$comentarios->calificacion}}</th>
-                <th class="text-center">
-                <!-- Single button -->
-                <div class="btn-group">
-                  <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
-                    <i class="fa fa-bullseye" aria-hidden="true"></i>
-                  </button>
-                </div>
-                </th>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thread>
+                <tr>
+                  <th class="head">Id</th>
+                  <th class="head">Comentario</th>
+                  <th class="head">Calificacion</th>
+                  <th class="head text-center">Status</th>
+                </tr>
+              </thread>
+              <tbody>
+              @foreach($comentarios as $comentarios)
+                <tr class="rowsTabla">
+                  <th scope="row">{{$comentarios->idComentario}}</th>
+                  <th>{{$comentarios->comentario}}</th>
+                  <th>{{$comentarios->calificacion}}</th>
+                  <th class="text-center">
+                  <!-- Single button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
+                      <i class="fa fa-bullseye" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  </th>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

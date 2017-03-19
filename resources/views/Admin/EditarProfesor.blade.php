@@ -47,6 +47,15 @@
         letter-spacing: 2px;
         font-size: 70px;
     }
+    /*label*/
+    .labelmenu{
+      background-color: #263238;
+    }
+    /*----- Iconos -----*/
+    .icondelete{
+        color: #d9534f;
+        border-color: #d43f3a;
+    }
     /*----- Menu -----*/
     @media (min-width: 768px) {
         .sidebar-nav .navbar .navbar-collapse {
@@ -93,14 +102,14 @@
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
-                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                                <li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
                                         <li><a href="{{url ('/Admin/Comentarios')}}">Comentarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{url ('/User/Profesores')}}">Materias</a></li>
-                                <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
+                                <li><a href="#">Materias</a></li>
+                                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
                             </ul>
                         </div>
                     </div>
@@ -111,7 +120,7 @@
                 <p class="profesor">Editar</p>
               </div>
               <div class="panel panel-default">
-                <div class="panel-heading">Información Personal</div>
+                <div class="panel-heading labelmenu">Información Personal</div>
                   <div class="panel-body">
                     <form class="form-horizontal" action="/admin/profesor/{{$profesores->idProfesor}}/guardarCambios" method="POST">
                       <div class="form-group">
@@ -150,10 +159,10 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">Información Académica</div>
                   <div class="panel-heading">
-                    <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionAcademica">Nueva Informacion Academica</button>
+                    <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionAcademica">Nueva Informacion Academica</button>
                   </div>
                   <div class="panel-body">
-                    <table class="table table-striped">
+                    <table class="table table-hover">
                       <thread>
                         <tr>
                           <th>#</th>
@@ -172,7 +181,7 @@
                           <th>{{$academica->escuela}}</th>
                           <th>{{$academica->estudios}}</th>
                           <th>{{$academica->periodo}}</th>
-                          <th><i class="fa fa-trash fa-2x" id ="EliminarAca" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
+                          <th><i class="fa fa-trash fa-2x icondelete" id ="EliminarAca" aria-hidden="true" value="{{$academica->idProfesor}}"></i></th>
                         </tr>
                         @endforeach
                         @endif
@@ -183,7 +192,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">Información Laboral</div>
                     <div class="panel-heading">
-                      <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionLaboral">Nueva Informacion Laboral</button>
+                      <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#nuevaInformacionLaboral">Nueva Informacion Laboral</button>
                     </div> 
                     <div class="panel-body">
                       <table class="table table-striped">
@@ -205,7 +214,7 @@
                             <th>{{$laboral->lugar_trabajo}}</th>
                             <th>{{$laboral->puesto}}</th>
                             <th>{{$laboral->periodo}}</th>
-                            <th><i class="fa fa-trash fa-2x" id="EliminarLab" aria-hidden="true" value="{{$laboral->idProfesor}}"></i></th>
+                            <th><i class="fa fa-trash fa-2x icondelete" id="EliminarLab" aria-hidden="true" value="{{$laboral->idProfesor}}"></i></th>
                           </tr>
                           @endforeach
                           @endif
