@@ -138,7 +138,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC01.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -242,7 +242,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC03.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -295,7 +295,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC04.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
