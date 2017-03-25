@@ -77,3 +77,5 @@ Route::get('/Mapas', function(){
 	return view('mapas');
 });
 
+Route::post('/Admin/Comentarios/{id}/eliminar',['middleware' => 'admin', 'uses' => 'comentarioController@eliminarComentario']);
+

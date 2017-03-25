@@ -136,6 +136,7 @@
                   <th class="head">Comentario</th>
                   <th class="head">Calificacion</th>
                   <th class="head text-center">Status</th>
+                  <th></th>
                 </tr>
               </thread>
               <tbody>
@@ -152,6 +153,7 @@
                     </button>
                   </div>
                   </th>
+                  <th><i class="fa fa-trash fa-2x icondelete" aria-hidden="true" value="{{$comentarios->idComentario}}"></i></th>
                 </tr>
                 @endforeach
               </tbody>
@@ -163,25 +165,21 @@
   </div>
 </div>
 
-
-    
-    
-       
-                      
-
 <!-- modal Nuevo Profesor-->
-<div class="modal fade" id="nuevoComentario" tabindex="-1" role="dialog" aria-labelledby="Nuevo comentario">
+<div class="modal fade" id="nuevoProfesor" tabindex="-1" role="dialog" aria-labelledby="Nuevo Profesor">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
+        <h4 class="modal-title" id="myModalLabel">Nuevo Profesor</h4>
       </div>
-      <form action="/user/comentario/crear" method="POST">
+      <form action="/admin/profesor/crear" method="POST">
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
-            <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
-            <input type="number" class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required><br>
+            <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required><br>
+            <input type="text" class="form-control" placeholder="Cubiculo" name="cubiculo" required><br>
+            <input type="email" class="form-control" placeholder="Correo Electronico" name="email" required><br>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
@@ -206,16 +204,25 @@
   </div>
 </div>
 
-
-            
-        </div>
-        
+<!-- modal seguridad eliminar evento-->
+<div class="modal fade" id="eliminarComentario" tabindex="-1" role="dialog" aria-labelledby="Eliminar Profesor">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+           <p class="lead" style="text-align:center;">¿Estas seguro de eliminar éste comentario?</p>
+      </div>
+      <div class="modal-footer">
+        <form method="POST" action="" id="eliminarComentario">
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-danger" style="width:100%;">SI</button>
+        </form>
+        <button type="button" class="btn btn-default" style="width:100%;" data-dismiss="modal">NO</button>
+      </div>
     </div>
-    
+  </div>
 </div>
 
-<br/>
-<br/>
+
 
 
 
@@ -263,7 +270,10 @@
              });
          });
 
-
+         $('i.fa-trash').click(function(){
+           $('#eliminarComentario').modal('show');
+           $('form#eliminarComentario').attr('action','/Admin/Comentarios/'+$(this).attr('value')+'/eliminar');
+         });
     });
   
 </script>

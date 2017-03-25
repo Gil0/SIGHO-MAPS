@@ -17,7 +17,14 @@ class comentarioController extends Controller
     $comentarios = comentario::orderBy('idComentario','ASC')->where('status',1)->paginate(3);
          return view('/User/comentarios')->with('comentarios',$comentarios);
     
-}
+	}
+
+	public function eliminarComentario(Request $request, $id)
+    {
+        DB::table('comentarios')->where('idComentario',$id)->delete();
+
+         return redirect()->action('AdminController@comentarios');
+    }
 
 
 }
