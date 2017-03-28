@@ -10,7 +10,11 @@
         padding: 0;
         margin: 0;
     }
+<<<<<<< HEAD
     .margen{
+=======
+        .margen{
+>>>>>>> c251f3238b6f752a197ee82a875d689d1c26cbfc
         padding: 0;
         margin: 0;
     }
@@ -78,6 +82,7 @@
 <div>
   <div class="col-sm-12">
     <div class="">
+    <div>
       <div class="col-sm-3">
         <div class="sidebar-nav">
           <div class="navbar navbar-default" role="navigation">
@@ -152,6 +157,73 @@
                         </tbody>
                     </table>
                 </div>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                    <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Materias</a></li>
+                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div>
+          <p class="profesor">Profesores</p>
+        </div>
+        <div>
+          <div class="col-sm-8 buscador">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Buscar</button>
+              </span>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="panel-heading">
+              <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#nuevoProfesor">Nuevo Profesor</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thread>
+                <tr>
+                  <th class="head">Id</th>
+                  <th class="head">Comentario</th>
+                  <th class="head">Calificacion</th>
+                  <th class="head text-center">Status</th>
+                </tr>
+              </thread>
+              <tbody>
+              @foreach($comentarios as $comentarios)
+                <tr class="rowsTabla">
+                  <th scope="row">{{$comentarios->idComentario}}</th>
+                  <th>{{$comentarios->comentario}}</th>
+                  <th>{{$comentarios->calificacion}}</th>
+                  <th class="text-center">
+                  <!-- Single button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
+                      <i class="fa fa-bullseye" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  </th>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- modal Nuevo Profesor-->
 <div class="modal fade" id="nuevoComentario" tabindex="-1" role="dialog" aria-labelledby="Nuevo comentario">
