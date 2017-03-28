@@ -38,7 +38,9 @@ class UserController extends Controller
             'comentario' => $request->comentario,
             'calificacion' => $request->calificacion,
             'status' => false,
+             'idUsuario' => $request->user,
             'idProfesor' => $id,
+           
         ]);
      
        return redirect()->action('UserController@profesores');

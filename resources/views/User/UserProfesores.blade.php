@@ -141,7 +141,7 @@
                                     <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                     <th>
                                         <div class="panel-heading">
-                                            <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
+                                            <button class="btn btn-success" id="nuevoCom" style="width:100%;" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
                                         </div>
                                     </th>
                                 </tr>
@@ -161,11 +161,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
       </div>
-      <form action="/user/comentario/crear" method="POST">
+      <form method="POST" id="AgregarCom">
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
-            <input type="number" class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="number" max=10 min=1 class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="hidden" name="user" value="{{Auth::user()->id}}">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
@@ -234,7 +235,10 @@
            $('form#eliminarProfesor').attr('action','/admin/profesores/'+$(this).attr('value')+'/eliminar');
          });
 
-
+        $('button#nuevoCom').click(function(){
+            $('#nuevoComentario').modal('show');
+            $('form#AgregarCom').attr('action', '/user/comentario/crear/'+$(this).attr('value') );
+        });
     });
 
 </script>
