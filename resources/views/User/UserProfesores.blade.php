@@ -178,72 +178,19 @@
   </div>
 </div>
 
-<!-- modal informacion Profesor-->
-<div class="modal fade" id="verEvento" tabindex="-1" role="dialog" aria-labelledby="Ver Profesor">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" id="informacionProfesor">
-           
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" style="width:100%;" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-       
 <script>
-    $(document).ready(function(){
-
+    $(document).ready(function(){               
         $('i.fa-plus-circle').click(function(){
-           $('#verProfesor').modal('show'); 
-
-            $.ajax({
-                url : '/admin/profesor/'+$(this).attr('value')+'/getInformacion',
-                type : 'GET',
-                dataType : 'json',
-                beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
-                    var token = $('meta[name="csrf_token"]').attr('content');
-                    if (token) {
-                          return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                     }
-               },
-                success:function(response){
-                    $('div#informacionEvento').html(
-                        '<div class="col-sm-12">'+
-                            '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<p class="lead">'+response.descripcion+'</p>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'
-                    );
-                }
-            });
-        });
-
-       
+            window.location.href = '/User/Profesores/'+$(this).attr('value')+'/Ver';
+         } );
         $('i.fa-pencil-square').click(function(){
-
            window.location.href = '/User/Comentarios/'+$(this).attr('value')+'/ver';
-
         });
-
-         $('i.fa-trash').click(function(){
-           $('#eliminarProfesor').modal('show');
-           $('form#eliminarProfesor').attr('action','/admin/profesores/'+$(this).attr('value')+'/eliminar');
-         });
-
         $('button#nuevoCom').click(function(){
             $('#nuevoComentario').modal('show');
             $('form#AgregarCom').attr('action', '/user/comentario/crear/'+$(this).attr('value') );
         });
-    });
 
+    });
 </script>
-@endsection
+@endsection 
