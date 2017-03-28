@@ -2,165 +2,134 @@
 
 @section('content')
 <meta name="csrf_token" content="{{ csrf_token() }}" /> <!--Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
- <link rel="stylesheet" href="{!!asset('css/bootstrap.min.css')!!}">
- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
     @import url('https://fonts.googleapis.com/css?family=Anton');
-
-
     body{
         padding: 0;
         margin: 0;
     }
-    .logo{
+    .margen{
+        padding: 0;
+        margin: 0;
+    }
+    /*----- Nav Superior -----*/
+    .navsup{
+        height: 55px;
+        background: #263238;
+    }
+    .imglogo{
         position: absolute;
         left: 0px;
         width: 5%;
-        top: -5px;
+        top: -3px;
     }
-    .log{
+    .logo{
         color: #fff;
         font-size: 20px;
         font-family: 'Anton', sans-serif;
         letter-spacing: 3px;
-        text-align: center;
-        top: 10px;
-        left: 70px;
+        padding-top: 12px;
+        padding-left: 70px;
     }
-    .log1{
+    .log{
         color: #06bb84;
         font-family: 'Anton', sans-serif;
         text-align: center;
     }
-    p{
-        position: absolute;
-        left: 130px;
-        top: 20px;
+    /*----- Buscador -----*/
+    .buscador{
+        padding-top: 10px;
     }
-    hr{
-        border-color: #06bb84;  
-    }
-    .navv{
-        height: 50px;
-        background: #263238;
-    }
-    .banner{
-        height: 130px;
-        background-image: url(/Imagenes/prof.jpg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    .nav1{
-        display: block;
-        color: #fff;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-    .nav2{
-        display: block;
-        color: #fff;
-        padding: 8px 16px;
-        text-decoration: none;
-        background-color: #546E7A;
-    }
-    .nav1:hover{
-        background-color: #455A64;
-        color: #fff;
-    }
-    .select{
-        background-color: #455A64;
-    }
-    .navu{
-        padding-top: 12px;
-    }
+    /*----- Banner -----*/
     .profesor{
-        color: #fff;
+        color: #06bb84;
         font-family: 'Anton', sans-serif;
         letter-spacing: 2px;
         font-size: 70px;
     }
-    .menuvertical{
-        position: fixed;
-        padding-top: 0px;
-        background-color: #37474F;
-        width: 299px;
-        height: 100%;
-    }
-    .navvertical{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 299px;
-        font-style: none;
-    }
-    .subnav{
-        list-style-type: none;
-        margin: 0;
-        padding: 0px 0px;
-        font-style: none;
-    }
-    .menuvertical ul ul{
-        display: none;
-    }
-    .menuvertical a span{
-        margin-left: 10px;
-    }
-    .contenprincipal{
-        margin: 0;
-        padding: 0;
-    }
-    .buscador{
-        padding-top: 10px;
+    /*----- Menu -----*/
+    @media (min-width: 768px) {
+        .sidebar-nav .navbar .navbar-collapse {
+            padding: 0;
+            max-height: none;
+        }
+        .sidebar-nav .navbar ul {
+            float: none;
+        }
+        .sidebar-nav .navbar ul:not {
+            display: block;
+        }
+        .sidebar-nav .navbar li {
+            float: none;
+            display: block;
+        }
+        .sidebar-nav .navbar li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
     }
 </style>
-<div class="navv">
-    <img class="logo" src="../Imagenes/Logo.png">
-    <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
+<div class="navsup">
+    <img class="imglogo" src="../Imagenes/Logo.png">
+    <a href="{{ url('/') }}"><p class="logo">SIGHO <span class="log">&</span> MAPS</p></a>
 </div>
-<div class="col-md-12 contenprincipal">
-    <div class="col-md-3 contenprincipal">
-        <div class="menuvertical">
-            <ul class="navvertical">
-                <li><a class="nav1"href="#">Inicio</a></li>
-                <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
-                    <ul class="subnav">
-                        <li><a class="nav2" href="">Lista</a></li>
-                        <li><a class="nav2" href="">Comentarios</a></li>
-                    </ul>
+<div>
+  <div class="col-sm-12">
+    <div class="">
+      <div class="col-sm-3">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="visible-xs navbar-brand">Menu</span>
+            </div>
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{{url ('/')}}">Inicio</a></li>
+                <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                  <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                </ul>
                 </li>
-                <li><a class="nav1"href="#">Mapas</a></li>
-            </ul>
+                <li><a href="#">Materias</a></li>
+                <li><a href="#">Mapas</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="col-md-9 contenprincipal">
-        <div class="col-md-12 contenprincipal">
-            <div class="banner">
-                <div class="container">
-                    <p class="profesor">Comentarios</p>
-                </div>
+      </div>
+      <div class="col-sm-9">
+        <div>
+          <p class="profesor">Comentarios</p>
+        </div>
+        <div>
+          <div class="col-sm-8 buscador">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Buscar</button>
+              </span>
+              <input type="text" class="form-control">
             </div>
-            <div class="container">
-                <div class="col-md-8 contenprincipal buscador">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Buscar</button>
-                        </span>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-            </div>
- <div><!--Este div se va a cambiar por otro.-->
+          </div>
+        </div>
 
-    
-    <div class="panel-body">
+            <div class="panel-body">
        <table class="table table-striped">
                         <thread>
                             <tr>
                                 <th class="head">Id</th>
                                 <th class="head">Comentario</th>
                                 <th class="head">Calificacion</th>
+                                <th class="head"></th>
+                                
                                 <th class="head text-center">Status</th>
                             </tr>
                         </thread>
@@ -201,6 +170,7 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
             <button type="submit" class="btn btn-primary" id="crearProfesor">Guardar</button>
+
         </div>
       </form>
     </div>
@@ -221,16 +191,6 @@
   </div>
 </div>
 
-
-            
-        </div>
-        
-    </div>
-    
-</div>
-
-<br/>
-<br/>
 
 
 
@@ -260,7 +220,7 @@
                  $(this).attr('value',0);
              }
              $.ajax({
-                 url:'/Admin/Comentarios/'+$(this).attr("id")+'/cambiarStatus',
+                 url:'Admin/Comentarios/'+$(this).attr('idComentario')+'/cambiarStatus',
                  type:'POST',
                  dataType:'json',
                  data:{
