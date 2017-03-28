@@ -28,12 +28,25 @@ class UserController extends Controller
         //
     }
 
-      public function profesores(){
-         $profesores = DB::table('profesores')->select('*')->get();
-        return view('/User/UserProfesores',['profesores'=>$profesores]);
-     }
+    public function profesores(){
+        $profesores = DB::table('profesores')->select('*')->get();                 
+        return view('/User/UserProfesores')
+                ->with('profesores',$profesores);                                   
+    }
 
-      public function crearComentario(Request $request, $id){
+    public function verProfesor(Request $request, $id){
+        $profesor = DB::table('profesores')->select('*')->where('idProfesor',$id)->first();
+        $formacion_academica = DB::table('formacionAcademica')->select('*')->where('idProfesor',$id)->get();
+        $informacion_laboral = DB::table('InformacionLaboral')->select('*')->where('idProfesor',$id)->get();
+        $comentarios = DB::table('comentarios')->select('*')->where('idProfesor',$id)->paginate(3);        
+         return view('/User/VerProfesores')
+                ->with('profesor',$profesor)
+                ->with('formacion_academica',$formacion_academica)
+                ->with('informacion_laboral',$informacion_laboral)
+                ->with('comentarios',$comentarios);
+    }
+
+    public function crearComentario(Request $request, $id){
          DB::table('comentarios')->insert([
             'comentario' => $request->comentario,
             'calificacion' => $request->calificacion,
@@ -43,7 +56,7 @@ class UserController extends Controller
      
        return redirect()->action('UserController@profesores');
      }
-
+     
      
     /**
      * Store a newly created resource in storage.
