@@ -147,16 +147,17 @@
           <li class="select "><a class="nav1"href="{{url ('/')}}">Inicio</a></li>
           @if(!Auth::guest())
                 @if(Auth::user()->is_admin == True)
-                    <li><a class="nav1" href="{{url ('Admin/Profesores')}}">Profesores</a></li>
-                    <li><a class="nav1"href="#">Mapas</a></li>
+                    <li><a class="nav1"href="{{url ('Admin/Profesores')}}">Profesores</a></li>
+                    <li><a class="nav1"href="#">Materias</a></li>
+                    <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
                 @else
                     <li><a class="nav1"href="#">Horarios</a></li>
                     <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
-                    <li><a class="nav1"href="#">Mapas</a></li>
+                    <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
                 @endif
             @else
             <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
-            <li><a class="nav1"href="#">Mapas</a></li>
+            <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
         @endif
             
 

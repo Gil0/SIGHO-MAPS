@@ -68,3 +68,15 @@ Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => '
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
 
 Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
+
+
+Route::get('/User/Comentarios',  ['middleware', 'uses' => 'comentarioController@profesores']);
+
+/////////Mapas
+Route::get('/Mapas', function(){
+	return view('mapas');
+});
+
+Route::post('/Admin/Comentarios/{id}/eliminar',['middleware' => 'admin', 'uses' => 'comentarioController@eliminarComentario']);
+
+Route::get('/User/Comentarios/{id}/ver',['middleware', 'uses' => 'comentarioController@verProfesor']);

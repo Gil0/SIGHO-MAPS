@@ -9,7 +9,7 @@ use App\Http\Requests;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,7 +46,7 @@ class UserController extends Controller
        return redirect()->action('UserController@profesores');
      }
 
-
+     
     /**
      * Store a newly created resource in storage.
      *
@@ -101,5 +101,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+        public function verProfesor(Request $request, $id){
+        $profesor= DB::table('profesores')->select('*')->where('idProfesor', $id)->first();
+       $comentarios=DB::table('comentarios')->select('*')->where('idProfesor',$id)->get();
+        
+        return view('/User/verProfesor')->with('profesores',$profesor)->with( 'academica',$academica)->with('comentarios',$comentarios);      
+
     }
 }
