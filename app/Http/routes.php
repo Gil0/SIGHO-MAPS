@@ -70,7 +70,7 @@ Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses
 Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
 
 
-Route::get('/User/Comentarios',  ['middleware', 'uses' => 'comentarioController@comentarios']);
+Route::get('/User/Comentarios',  ['middleware', 'uses' => 'comentarioController@profesores']);
 
 /////////Mapas
 Route::get('/Mapas', function(){
@@ -79,3 +79,4 @@ Route::get('/Mapas', function(){
 
 Route::post('/Admin/Comentarios/{id}/eliminar',['middleware' => 'admin', 'uses' => 'comentarioController@eliminarComentario']);
 
+Route::get('/User/Comentarios/{id}/ver',['middleware', 'uses' => 'comentarioController@verProfesor']);

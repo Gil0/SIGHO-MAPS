@@ -129,7 +129,7 @@
                                     <th>Apellidos</th>
                                     <th>Ver mas</th>
                                     <th>Escribir comentario</th>
-                                    <th></th>
+                                    <th>Ver comentarios</th>
                                 </tr>
                             </thread>
                             <tbody>
@@ -144,6 +144,7 @@
                                             <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
                                         </div>
                                     </th>
+                                    <th><i class="fa fa-pencil-square fa-2x iconpencil" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -225,8 +226,11 @@
             });
         });
 
+       
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+
+           window.location.href = '/User/Comentarios/'+$(this).attr('value')+'/ver';
+
         });
 
          $('i.fa-trash').click(function(){

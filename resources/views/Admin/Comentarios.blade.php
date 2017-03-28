@@ -71,6 +71,10 @@
             padding-top: 12px;
             padding-bottom: 12px;
         }
+       
+        #comentario{
+        	width: 35%;
+        }
     }
 </style>
 <div class="navsup">
@@ -143,7 +147,7 @@
               @foreach($comentarios as $comentarios)
                 <tr class="rowsTabla">
                   <th scope="row">{{$comentarios->idComentario}}</th>
-                  <th>{{$comentarios->comentario}}</th>
+                  <th id="comentario">{{$comentarios->comentario}}</th>
                   <th>{{$comentarios->calificacion}}</th>
                   <th class="text-center">
                   <!-- Single button -->
