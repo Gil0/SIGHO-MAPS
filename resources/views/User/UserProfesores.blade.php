@@ -129,7 +129,7 @@
                                     <th>Apellidos</th>
                                     <th>Ver mas</th>
                                     <th>Escribir comentario</th>
-                                    <th></th>
+                                    <th>Ver comentarios</th>
                                 </tr>
                             </thread>
                             <tbody>
@@ -141,9 +141,10 @@
                                     <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                     <th>
                                         <div class="panel-heading">
-                                            <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
+                                            <button class="btn btn-success" id="nuevoCom" style="width:100%;" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
                                         </div>
                                     </th>
+                                    <th><i class="fa fa-pencil-square fa-2x iconpencil" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -161,11 +162,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
       </div>
-      <form action="/user/comentario/crear" method="POST">
+      <form method="POST" id="AgregarCom">
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
-            <input type="number" class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="number" max=10 min=1 class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="hidden" name="user" value="{{Auth::user()->id}}">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
@@ -176,66 +178,19 @@
   </div>
 </div>
 
-<!-- modal informacion Profesor-->
-<div class="modal fade" id="verEvento" tabindex="-1" role="dialog" aria-labelledby="Ver Profesor">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" id="informacionProfesor">
-           
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" style="width:100%;" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-       
 <script>
-    $(document).ready(function(){
-
+    $(document).ready(function(){               
         $('i.fa-plus-circle').click(function(){
-           $('#verProfesor').modal('show'); 
-
-            $.ajax({
-                url : '/admin/profesor/'+$(this).attr('value')+'/getInformacion',
-                type : 'GET',
-                dataType : 'json',
-                beforeSend: function (xhr) {                                      //Antes de enviar la peticion AJAX se incluye el csrf_token para validar la sesion.
-                    var token = $('meta[name="csrf_token"]').attr('content');
-                    if (token) {
-                          return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                     }
-               },
-                success:function(response){
-                    $('div#informacionEvento').html(
-                        '<div class="col-sm-12">'+
-                            '<div class="row">'+
-                                '<div class="col-sm-8 col-sm-offset-2">'+
-                                    '<h2 style="text-align:center;">'+response.nombre+'</h2>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<p class="lead">'+response.descripcion+'</p>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'
-                    );
-                }
-            });
-        });
-
+            window.location.href = '/User/Profesores/'+$(this).attr('value')+'/Ver';
+         } );
         $('i.fa-pencil-square').click(function(){
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+           window.location.href = '/User/Comentarios/'+$(this).attr('value')+'/ver';
         });
-
-         $('i.fa-trash').click(function(){
-           $('#eliminarProfesor').modal('show');
-           $('form#eliminarProfesor').attr('action','/admin/profesores/'+$(this).attr('value')+'/eliminar');
-         });
-
+        $('button#nuevoCom').click(function(){
+            $('#nuevoComentario').modal('show');
+            $('form#AgregarCom').attr('action', '/user/comentario/crear/'+$(this).attr('value') );
+        });
 
     });
-
 </script>
-@endsection
+@endsection 
