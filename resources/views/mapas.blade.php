@@ -122,7 +122,7 @@
                                 <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
                                 @endif
                                 @else
-                                <li><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
+                                <li><a href="{{url ('/Profesores')}}">Profesores</a></li>
                                 <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
                                 @endif
                             </ul>
@@ -138,7 +138,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC01.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -156,7 +156,7 @@
                                         <tbody>
                                             <tr>
                                                 <th>Sótano</th>
-                                                <th>101-104</th>
+                                                <th>000-006</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC011">Ver más</button>
@@ -165,7 +165,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Planta baja</th>
-                                                <th>101-104</th>
+                                                <th>101-103</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC012">Ver más</button>
@@ -174,7 +174,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Primer piso</th>
-                                                <th>101-104</th>
+                                                <th>201-206</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC013">Ver más</button>
@@ -190,7 +190,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC02.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -242,7 +242,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC03.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -259,8 +259,8 @@
                                         </thread>
                                         <tbody>
                                             <tr>
-                                                <th>Planta baja</th>
-                                                <th>101-104</th>
+                                                <th>Sótano</th>
+                                                <th>001-011</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC031">Ver más</button>
@@ -268,8 +268,8 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th>Primer piso</th>
-                                                <th>101-104</th>
+                                                <th>Planta baja</th>
+                                                <th>101-106</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC032">Ver más</button>
@@ -277,11 +277,20 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th>Segundo piso</th>
-                                                <th>101-104</th>
+                                                <th>Primer piso</th>
+                                                <th>200-207</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC033">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Segundo piso</th>
+                                                <th>300-306</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC034">Ver más</button>
                                                     </div>
                                                 </th>
                                             </tr>
@@ -295,7 +304,7 @@
                     <div>
                         <div class="col-sm-4">
                             <div>
-                                <img class="map" src="../Imagenes/map1.jpg" data-toggle="modal">
+                                <img class="map" src="../Imagenes/CC04.jpg" data-toggle="modal">
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -313,7 +322,7 @@
                                         <tbody>
                                             <tr>
                                                 <th>Planta baja</th>
-                                                <th>101-104</th>
+                                                <th>101-106</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC041">Ver más</button>
@@ -322,7 +331,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Primer piso</th>
-                                                <th>101-104</th>
+                                                <th>201-218</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC042">Ver más</button>
@@ -331,10 +340,19 @@
                                             </tr>
                                             <tr>
                                                 <th>Segundo piso</th>
-                                                <th>101-104</th>
+                                                <th>301-310</th>
                                                 <th>
                                                     <div class="btn-group">
                                                         <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC043">Ver más</button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Tercer piso</th>
+                                                <th>307-310</th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#CC044">Ver más</button>
                                                     </div>
                                                 </th>
                                             </tr>
@@ -358,7 +376,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Sótano</h4>
             </div>
-            <img src="../Imagenes/croquis.png">
+            <center><img src="../Imagenes/CC01Sotano.jpg"></center>
         </div>
     </div>
 </div>
@@ -370,6 +388,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Planta baja</h4>
             </div>
+            <center><img src="../Imagenes/CC01PrimerPiso.jpg"></center>
         </div>
     </div>
 </div>
@@ -381,6 +400,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Primer piso</h4>
             </div>
+            <center><img src="../Imagenes/CC01SegundoPiso.jpg"></center>
         </div>
     </div>
 </div>
@@ -425,8 +445,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Planta baja</h4>
+                <h4 class="modal-title" id="myModalLabel">Sótano</h4>
             </div>
+            <center><img src="../Imagenes/Sotano.jpg"></center>
         </div>
     </div>
 </div>
@@ -436,8 +457,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Primer piso</h4>
+                <h4 class="modal-title" id="myModalLabel">Planta baja</h4>
             </div>
+            <center><img src="../Imagenes/PlantaBaja.jpg"></center>
         </div>
     </div>
 </div>
@@ -447,8 +469,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Primer piso</h4>
+            </div>
+            <center><img src="../Imagenes/PrimerPiso.jpg"></center>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="CC034" tabindex="-1" role="dialog" aria-labelledby="Nuevo Profesor">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Segundo piso</h4>
             </div>
+            <center><img src="../Imagenes/SegundoPiso.jpg"></center>
         </div>
     </div>
 </div>
@@ -461,6 +496,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Planta baja</h4>
             </div>
+            <center><img src="../Imagenes/CC04PlantaBaja.jpg"></center>
         </div>
     </div>
 </div>
@@ -472,6 +508,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Primer piso</h4>
             </div>
+            <center><img src="../Imagenes/CC04PrimerPiso.jpg"></center>
         </div>
     </div>
 </div>
@@ -483,6 +520,19 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Segundo piso</h4>
             </div>
+            <center><img src="../Imagenes/CC04SegundoPiso.jpg"></center>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="CC044" tabindex="-1" role="dialog" aria-labelledby="Nuevo Profesor">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Tercer piso</h4>
+            </div>
+            <center><img src="../Imagenes/CC04TercerPiso.jpg"></center>
         </div>
     </div>
 </div>

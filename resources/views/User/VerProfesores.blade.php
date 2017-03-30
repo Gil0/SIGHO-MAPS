@@ -97,9 +97,25 @@
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
-                                <li><a href="#">Horario</a></li>
-                                <li class="active"><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
+                                @if(!Auth::guest())
+                                @if(Auth::user()->is_admin == True)
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                                        <li><a href="{{url ('/Admin/Comentarios')}}">Comentarios</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Materias</a></li>
+                                <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
+                                @else
+                                <li><a href="#">Horarios</a></li>
+                                <li><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
+                                <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
+                                @endif
+                                @else
+                                <li class="active"><a href="{{url ('/Profesores')}}">Profesores</a></li>
                                 <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
