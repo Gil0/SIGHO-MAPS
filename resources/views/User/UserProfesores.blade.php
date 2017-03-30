@@ -141,7 +141,7 @@
                                     <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                     <th>
                                         <div class="panel-heading">
-                                            <button class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#nuevoComentario" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
+                                            <button class="btn btn-success" style="width:100%;" id="agregaProfesor" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
                                         </div>
                                     </th>
                                 </tr>
@@ -161,7 +161,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
       </div>
-      <form action="/user/comentario/crear" method="POST">
+      <form id="formComentario" action="/user/comentario/crear" method="POST">
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
@@ -237,5 +237,19 @@
 
     });
 
+</script>
+
+<script>
+    $(document).ready(function(){
+
+         $('button#agregaProfesor').click(function(){
+           $('#nuevoComentario').modal('show');
+           $('form#formComentario').attr('action','/user/comentario/crea'+$(this).attr('value');
+         });
+         $('i#EliminarLab').click(function(){
+           $('#eliminarInfoLaboralModal').modal('show');
+           $('form#eliminarInfoLaboral').attr('action','/admin/profesor/laboral/'+$(this).attr('value')+'/eliminar');
+         });
+    });
 </script>
 @endsection
