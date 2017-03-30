@@ -82,3 +82,5 @@ Route::get('/Mapas', function(){
 Route::post('/Admin/Comentarios/{id}/eliminar',['middleware' => 'admin', 'uses' => 'comentarioController@eliminarComentario']);
 
 Route::get('/User/Comentarios/{id}/ver',['middleware', 'uses' => 'comentarioController@verProfesor']);
+
+Route::get('/Profesores', 'UserController@guestProfesores');

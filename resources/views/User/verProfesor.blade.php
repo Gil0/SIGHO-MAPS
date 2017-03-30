@@ -117,32 +117,8 @@
             </div>
             <div class="col-sm-9">
               <div>
-                <p class="profesor">Información Comentarios</p>
+                <p class="profesor">{{$profesores->nombre}} {{$profesores->apellidos}}</p>
               </div>
-              <div class="panel panel-default">
-                <div class="panel-heading labelmenu">Información Profesor</div>
-                  <div class="panel-body">
-                    <form class="form-horizontal" action="/admin/profesor/{{$profesores->idProfesor}}/guardarCambios" method="POST">
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label">Nombre</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="nombreProfesor" name="nombreProfesor" value="{{$profesores->nombre}}" readonly>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label">Apellidos</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="apellidoProfesor" name="apellidoProfesor" value="{{$profesores->apellidos}}" readonly>
-                        </div>
-                      </div>
-                     
-                     
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <div class="form-group">
-                      </div>
-                    </form>
-                  </div>
-                </div>
               
                 <div class="panel panel-default">
                   <div class="panel-heading">Comentarios</div>
@@ -153,8 +129,6 @@
                             <th>#</th>
                             <th>comentario</th>
                             <th>Calificacion</th>
-                            <th></th>
-                            <th></th>
                           </tr>
                         </thread>
                         <tbody>
