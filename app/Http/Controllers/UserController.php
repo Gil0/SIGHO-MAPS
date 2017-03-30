@@ -34,6 +34,14 @@ class UserController extends Controller
                 ->with('profesores',$profesores);                                   
     }
 
+              
+    public function guestProfesores(){
+        $profesores = DB::table('profesores')->select('*')->get();                 
+        return view('/User/guestProfesores')
+                ->with('profesores',$profesores);                                   
+    }
+
+
     public function verProfesor(Request $request, $id){
         $profesor = DB::table('profesores')->select('*')->where('idProfesor',$id)->first();
         $formacion_academica = DB::table('formacionAcademica')->select('*')->where('idProfesor',$id)->get();
