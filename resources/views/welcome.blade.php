@@ -156,7 +156,7 @@
                     <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
                 @endif
             @else
-            <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
+            <li><a class="nav1"href="{{url ('/Profesores')}}">Profesores</a></li>
             <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
         @endif
             

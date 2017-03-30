@@ -77,6 +77,7 @@ class AdminController extends Controller
         $profesor= DB::table('profesores')->select('*')->where('idProfesor', $id)->first();
         $academica = DB::table('formacionAcademica')->select('*')->where('idProfesor',$id)->get();
         $laboral = DB::table('informacionLaboral')->select('*')->where('idProfesor',$id)->get();
+        
         return view('/Admin/EditarProfesor')->with('profesores',$profesor)->with( 'academica',$academica)->with('laboral',$laboral);      
 
     }

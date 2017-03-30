@@ -122,7 +122,7 @@
                                 <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
                                 @endif
                                 @else
-                                <li><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
+                                <li><a href="{{url ('/Profesores')}}">Profesores</a></li>
                                 <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
                                 @endif
                             </ul>
