@@ -1,7 +1,83 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+    @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
+    @import url('https://fonts.googleapis.com/css?family=Anton');
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .margen{
+        padding: 0;
+        margin: 0;
+    }
+    /*----- Nav Superior -----*/
+    .navsup{
+        height: 55px;
+        background: #263238;
+    }
+    .imglogo{
+        position: absolute;
+        left: 0px;
+        width: 5%;
+        top: -3px;
+    }
+    .logo{
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 3px;
+        padding-top: 12px;
+        padding-left: 70px;
+    }
+    .log{
+        color: #06bb84;
+        font-family: 'Anton', sans-serif;
+        text-align: center;
+    }
+    /*----- Buscador -----*/
+    .buscador{
+        padding-top: 10px;
+    }
+    /*----- Banner -----*/
+    .profesor{
+        color: #06bb84;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 2px;
+        font-size: 70px;
+    }
+    /*----- Iconos -----*/
+    .iconpencil{
+        color: #5cb85c;
+        border-color: #4cae4c;
+    }
+    .icondelete{
+        color: #d9534f;
+        border-color: #d43f3a;
+    }
+    /*----- Menu -----*/
+    @media (min-width: 768px) {
+        .sidebar-nav .navbar .navbar-collapse {
+            padding: 0;
+            max-height: none;
+        }
+        .sidebar-nav .navbar ul {
+            float: none;
+        }
+        .sidebar-nav .navbar ul:not {
+            display: block;
+        }
+        .sidebar-nav .navbar li {
+            float: none;
+            display: block;
+        }
+        .sidebar-nav .navbar li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+</style>
         <div class="navsup">
     <img class="imglogo" src="../Imagenes/Logo.png">
     <a href="{{ url('/') }}"><p class="logo">SIGHO <span class="log">&</span> MAPS</p></a>
