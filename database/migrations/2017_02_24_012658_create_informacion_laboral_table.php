@@ -18,12 +18,9 @@ class CreateInformacionLaboralTable extends Migration
             $table->string('lugar_trabajo');
             $table->string('puesto');
             $table->string('periodo');
-            $table->integer('idProfesor');
-
-
-            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
-
-        });
+            $table->integer('idProfesor')->unsigned();
+            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');        
+        });        
     }
 
     /**
