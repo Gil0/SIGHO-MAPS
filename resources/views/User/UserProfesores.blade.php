@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!--<meta name="csrf_token" content="{{ csrf_token() }}" /> <!--Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
+<!--<meta name="csrf_token" content="{{ csrf_token() }}" /> <!Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
