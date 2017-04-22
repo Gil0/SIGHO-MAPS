@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="../public/js/proyecto.js"></script>
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
     @import url('https://fonts.googleapis.com/css?family=Anton');

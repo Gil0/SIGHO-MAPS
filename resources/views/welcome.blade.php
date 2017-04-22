@@ -151,7 +151,7 @@
                     <li><a class="nav1"href="#">Materias</a></li>
                     <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
                 @else
-                    <li><a class="nav1"href="#">Horarios</a></li>
+                    <li><a class="nav1"href="{{url ('/horario')}}">Horarios</a></li>
                     <li><a class="nav1"href="{{url ('User/Profesores')}}">Profesores</a></li>
                     <li><a class="nav1"href="{{url ('/Mapas')}}">Mapas</a></li>
                 @endif
