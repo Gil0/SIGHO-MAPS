@@ -8,195 +8,189 @@
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
     @import url('https://fonts.googleapis.com/css?family=Anton');
-
-
     body{
         padding: 0;
         margin: 0;
     }
-    .logo{
+        .margen{
+        padding: 0;
+        margin: 0;
+    }
+    /*----- Nav Superior -----*/
+    .navsup{
+        height: 55px;
+        background: #263238;
+    }
+    .imglogo{
         position: absolute;
         left: 0px;
         width: 5%;
-        top: -5px;
+        top: -3px;
     }
-    .log{
+    .logo{
         color: #fff;
         font-size: 20px;
         font-family: 'Anton', sans-serif;
         letter-spacing: 3px;
-        text-align: center;
-        top: 10px;
-        left: 70px;
+        padding-top: 12px;
+        padding-left: 70px;
     }
-    .log1{
+    .log{
         color: #06bb84;
         font-family: 'Anton', sans-serif;
         text-align: center;
     }
-    p{
-        position: absolute;
-        left: 130px;
-        top: 20px;
+    /*----- Buscador -----*/
+    .buscador{
+        padding-top: 10px;
     }
-    hr{
-        border-color: #06bb84;  
-    }
-    .navv{
-        height: 50px;
-        background: #263238;
-    }
-    .banner{
-        height: 130px;
-        background-image: url(/Imagenes/prof.jpg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    .nav1{
-        display: block;
-        color: #fff;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-    .nav2{
-        display: block;
-        color: #fff;
-        padding: 8px 16px;
-        text-decoration: none;
-        background-color: #546E7A;
-    }
-    .nav1:hover{
-        background-color: #455A64;
-        color: #fff;
-    }
-    .select{
-        background-color: #455A64;
-    }
-    .navu{
-        padding-top: 12px;
-    }
+    /*----- Banner -----*/
     .profesor{
-        color: #fff;
+        color: #06bb84;
         font-family: 'Anton', sans-serif;
         letter-spacing: 2px;
         font-size: 70px;
     }
-    .menuvertical{
-        position: fixed;
-        padding-top: 0px;
-        background-color: #37474F;
-        width: 299px;
-        height: 100%;
-    }
-    .navvertical{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 299px;
-        font-style: none;
-    }
-    .subnav{
-        list-style-type: none;
-        margin: 0;
-        padding: 0px 0px;
-        font-style: none;
-    }
-    .menuvertical ul ul{
-        display: none;
-    }
-    .menuvertical a span{
-        margin-left: 10px;
-    }
-    .contenprincipal{
-        margin: 0;
-        padding: 0;
-    }
-    .buscador{
-        padding-top: 10px;
+    /*----- Menu -----*/
+    @media (min-width: 768px) {
+        .sidebar-nav .navbar .navbar-collapse {
+            padding: 0;
+            max-height: none;
+        }
+        .sidebar-nav .navbar ul {
+            float: none;
+        }
+        .sidebar-nav .navbar ul:not {
+            display: block;
+        }
+        .sidebar-nav .navbar li {
+            float: none;
+            display: block;
+        }
+        .sidebar-nav .navbar li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+       
+       tbody{
+         width: 20px;
+       }
+        #comentario{
+        
+          color: red;
+        }
+      #head{
+         width: 30%;
+       }
     }
 </style>
-<div class="navv">
-    <img class="logo" src="../Imagenes/Logo.png">
-    <a href="{{ url('/') }}"><p class="log">SIGHO <span class="log1">&</span> MAPS</p></a>
+<div class="navsup">
+    <img class="imglogo" src="../Imagenes/Logo.png">
+    <a href="{{ url('/') }}"><p class="logo">SIGHO <span class="log">&</span> MAPS</p></a>
 </div>
-<div class="col-md-12 contenprincipal">
-    <div class="col-md-3 contenprincipal">
-        <div class="menuvertical">
-            <ul class="navvertical">
-                <li><a class="nav1"href="#">Inicio</a></li>
-                <li class="select submenu"><a class="nav1"href="#">Profesores <span>+</span></a>
-                    <ul class="subnav">
-                        <li><a class="nav2" href="">Lista</a></li>
-                        <li><a class="nav2" href="">Comentarios</a></li>
-                    </ul>
+<div>
+  <div class="col-sm-12">
+    <div>
+      <div class="col-sm-3">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="visible-xs navbar-brand">Menu</span>
+            </div>
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{{url ('/')}}">Inicio</a></li>
+                <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
+                    <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                  </ul>
                 </li>
-                <li><a class="nav1"href="#">Mapas</a></li>
-            </ul>
+                <li><a href="#">Materias</a></li>
+                <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-9">
+        <div>
+          <p class="profesor">Profesores</p>
+        </div>
+        <div>
+          <div class="col-sm-8 buscador">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Buscar</button>
+              </span>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="panel-heading">
+              <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#nuevoProfesor">Nuevo Profesor</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thread>
+                <tr>
+                  <th class="head">Id</th>
+                  <th class="head">Comentario</th>
+                  <th class="head">Calificacion</th>
+                  <th class="head text-center">Status</th>
+                  <th></th>
+                </tr>
+              </thread>
+              <tbody>
+              @foreach($comentarios as $comentarios)
+                <tr class="rowsTabla">
+                  <th scope="row">{{$comentarios->idComentario}}</th>
+                  <th id="comentario">{{$comentarios->comentario}}</th>
+                  <th>{{$comentarios->calificacion}}</th>
+                  <th class="text-center">
+                  <!-- Single button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
+                      <i class="fa fa-bullseye" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  </th>
+                  <th><i class="fa fa-trash fa-2x icondelete" aria-hidden="true" value="{{$comentarios->idComentario}}"></i></th>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-9 contenprincipal">
-        <div class="col-md-12 contenprincipal">
-            <div class="banner">
-                <div class="container">
-                    <p class="profesor">Comentarios</p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="col-md-8 contenprincipal buscador">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Buscar</button>
-                        </span>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-            </div>
- <div><!--Este div se va a cambiar por otro.-->
-
-    
-    <div class="panel-body">
-       <table class="table table-striped">
-                        <thread>
-                            <tr>
-                                <th class="head">Id</th>
-                                <th class="head">Comentario</th>
-                                <th class="head">Calificacion</th>
-                                <th class="head text-center">Status</th>
-                            </tr>
-                        </thread>
-                        <tbody>
-                            @foreach($comentarios as $comentarios)
-                                <tr class="rowsTabla">
-                                    <th scope="row">{{$comentarios->idComentario}}</th>
-                                    <th>{{$comentarios->comentario}}</th>
-                                     <th>{{$comentarios->calificacion}}</th>
-                                    <th class="text-center">
-                                        <!-- Single button -->
-                                        <div class="btn-group">
-                                        <button type="button" class="btn statusBtn" style="width:200%;" id="{{$comentarios->idComentario}}" value="{{$comentarios->status}}">
-                                           <i class="fa fa-bullseye" aria-hidden="true"></i>
-                                        </button>
-                                        </div>
-                                    </th>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+  </div>
+</div>
 
 <!-- modal Nuevo Profesor-->
-<div class="modal fade" id="nuevoComentario" tabindex="-1" role="dialog" aria-labelledby="Nuevo comentario">
+<div class="modal fade" id="nuevoProfesor" tabindex="-1" role="dialog" aria-labelledby="Nuevo Profesor">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
+        <h4 class="modal-title" id="myModalLabel">Nuevo Profesor</h4>
       </div>
-      <form action="/user/comentario/crear" method="POST">
+      <form action="/admin/profesor/crear" method="POST">
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
-            <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
-            <input type="number" class="form-control" placeholder="calificacion" name="calificacion" required><br>
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required><br>
+            <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required><br>
+            <input type="text" class="form-control" placeholder="Cubiculo" name="cubiculo" required><br>
+            <input type="email" class="form-control" placeholder="Correo Electronico" name="email" required><br>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="cancelar">Cerrar</button>
@@ -221,16 +215,25 @@
   </div>
 </div>
 
-
-            
-        </div>
-        
+<!-- modal seguridad eliminar evento-->
+<div class="modal fade" id="eliminarComentario" tabindex="-1" role="dialog" aria-labelledby="Eliminar Profesor">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+           <p class="lead" style="text-align:center;">¿Estas seguro de eliminar éste comentario?</p>
+      </div>
+      <div class="modal-footer">
+        <form method="POST" action="" id="eliminarComentario">
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-danger" style="width:100%;">SI</button>
+        </form>
+        <button type="button" class="btn btn-default" style="width:100%;" data-dismiss="modal">NO</button>
+      </div>
     </div>
-    
+  </div>
 </div>
 
-<br/>
-<br/>
+
 
 
 
@@ -278,7 +281,10 @@
              });
          });
 
-
+         $('i.fa-trash').click(function(){
+           $('#eliminarComentario').modal('show');
+           $('form#eliminarComentario').attr('action','/Admin/Comentarios/'+$(this).attr('value')+'/eliminar');
+         });
     });
   
 </script>

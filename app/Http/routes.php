@@ -36,6 +36,9 @@ Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin',
 Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
 Route::post('/admin/profesor/infoAcademica/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoAcademica']);
 Route::post('/admin/profesor/infoLaboral/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoLaboral']);
+Route::get('/horario', function () {
+    return view('horario');
+});
 
 
 
@@ -56,6 +59,8 @@ Route::get('User/Profesores', function(){
 
 Route::get('/User/Profesores',  ['middleware', 'uses' => 'UserController@profesores']);
 
+Route::get('/User/Profesores/{id}/Ver',  ['middleware', 'uses' => 'UserController@verProfesor']);
+
 Route::post('/user/comentario/crear/{id}',  ['middleware' , 'uses' => 'UserController@crearComentario']);
 
 Route::get('/Admin/Comentarios',  ['middleware' => 'admin', 'uses' => 'AdminController@comentarios']);
@@ -68,3 +73,17 @@ Route::get('/admin/profesores/{id}/editar',['middleware' => 'admin', 'uses' => '
 Route::post('/admin/profesor/{id}/guardarCambios',['middleware' => 'admin','uses' => 'AdminController@guardarCambiosProfesor']);
 
 Route::get('/admin/profesor/{id}/getInformacion',['middleware' => 'admin', 'uses' => 'AdminController@getInfoProfesor']);
+
+
+Route::get('/User/Comentarios',  ['middleware', 'uses' => 'comentarioController@profesores']);
+
+/////////Mapas
+Route::get('/Mapas', function(){
+	return view('mapas');
+});
+
+Route::post('/Admin/Comentarios/{id}/eliminar',['middleware' => 'admin', 'uses' => 'comentarioController@eliminarComentario']);
+
+Route::get('/User/Comentarios/{id}/ver',['middleware', 'uses' => 'comentarioController@verProfesor']);
+
+Route::get('/Profesores', 'UserController@guestProfesores');

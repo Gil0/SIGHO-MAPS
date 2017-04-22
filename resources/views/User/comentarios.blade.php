@@ -104,8 +104,8 @@
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
                                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li class="active"><a href="{{url ('/Admin/Profesores')}}">Lista</a></li>
-                                        <li><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
+                                        <li class="active"><a href="{{url ('/User/Profesores')}}">Lista</a></li>
+                                        <li><a href={{url ('/User/Comentarios')}}>Comentarios</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Materias</a></li>
@@ -117,7 +117,7 @@
             </div>
             <div class="col-sm-9">
                 <div>
-                    <p class="profesor">Profesores</p>
+                    <p class="profesor">Comentarios Profesores</p>
                 </div>
                 <div>
                     <div class="col-sm-8 buscador">
@@ -126,11 +126,6 @@
                                 <button class="btn btn-default" type="button">Buscar</button>
                             </span>
                             <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="panel-heading">
-                            <button class="btn btn-outline-success" style="width:100%;" data-toggle="modal" data-target="#nuevoProfesor">Nuevo Profesor</button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +139,7 @@
                                         <th>nombre</th>
                                         <th>apellidos</th>
                                         <th></th>
-                                        <th></th>
+                                        <th>Ver Comentarios</th>
                                         <th></th>
                                     </tr>
                                 </thread>
@@ -156,11 +151,12 @@
                                         <th>{{$profesores->apellidos}}</th>
                                         <th><!--<i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i>--></th>
                                         <th><i class="fa fa-pencil-square fa-2x iconpencil" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
-                                        <th><i class="fa fa-trash fa-2x icondelete" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
+                                        
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                      
                         </div>
                     </div>
                 </div>
@@ -266,7 +262,7 @@
 
         $('i.fa-pencil-square').click(function(){
 
-           window.location.href = '/admin/profesores/'+$(this).attr('value')+'/editar';
+           window.location.href = '/User/Comentarios/'+$(this).attr('value')+'/ver';
 
         });
 
