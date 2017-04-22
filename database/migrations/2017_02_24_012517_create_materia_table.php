@@ -20,12 +20,10 @@ class CreateMateriaTable extends Migration
             $table->string('dias');
             $table->string('horas');
             $table->string('clave');
-            $table->integer('idProfesor');
-
-            $table->primary('nrc');
+            $table->integer('idProfesor')->unsigned();
+            $table->primary('nrc');            
             $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
-
-        });
+        });      
     }
 
     /**
