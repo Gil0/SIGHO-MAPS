@@ -36,6 +36,9 @@ Route::post('/admin/profesor/academica/{id}/eliminar', ['middleware' => 'admin',
 Route::post('/admin/profesor/laboral/{id}/eliminar', ['middleware' => 'admin', 'uses' => 'AdminController@eliminarInfoLaboral']);
 Route::post('/admin/profesor/infoAcademica/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoAcademica']);
 Route::post('/admin/profesor/infoLaboral/{id}/editar', ['middleware' => 'admin', 'uses' => 'AdminController@editarInfoLaboral']);
+Route::get('/horario', function () {
+    return view('horario');
+});
 
 
 

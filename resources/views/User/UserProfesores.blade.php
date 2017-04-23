@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!--<meta name="csrf_token" content="{{ csrf_token() }}" /> <!--Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
+<!--<meta name="csrf_token" content="{{ csrf_token() }}" /> <!Se necestia este metadato para poder hacer AJAX, se envia el csrf_token al server para validar que si existe la sesion -->
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <style>
     @import url('http://fonts.googleapis.com/css?family=Julius+Sans+One');
@@ -141,6 +141,7 @@
                                     <th><i class="fa fa-plus-circle fa-2x" aria-hidden="true" value="{{$profesores->idProfesor}}"></i></th>
                                     <th>
                                         <div class="panel-heading">
+
                                             <button class="btn btn-success" id="nuevoCom" style="width:100%;" value="{{$profesores->idProfesor}}">Agregar Comentario</button>
                                         </div>
                                     </th>
@@ -162,7 +163,10 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
       </div>
-      <form method="POST" id="AgregarCom">
+
+      <form id="formComentario" action="/user/comentario/crear" method="POST">
+
+
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
         <div class="modal-body">
             <input type="text" class="form-control" placeholder="comentario" name="comentario" required><br>
@@ -192,5 +196,5 @@
         });
 
     });
-</script>
-@endsection 
+
+@endsection
