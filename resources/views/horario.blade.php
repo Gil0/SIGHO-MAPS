@@ -1218,6 +1218,7 @@
     <option value="5" >Viernes</option>
     <option value="6" >Sábado</option>
     <option value="6" >Domingo</option>
+    <option value="6" >Domingo</option>
 
 </select>
 &nbsp
