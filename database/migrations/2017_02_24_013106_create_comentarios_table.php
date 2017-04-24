@@ -21,7 +21,7 @@ class CreateComentariosTable extends Migration
             $table->integer('idProfesor')->unsigned();
             $table->integer('idUsuario')->unsigned();
             $table->boolean('status',false);
-            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
+            $table->foreign('idProfesor')->references('idProfesor')->on('profesores')->onDelete('cascade');
             $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
         });        
     }

@@ -19,7 +19,7 @@ class CreateFormacionAcademicaTable extends Migration
             $table->string('estudios');
             $table->string('periodo');
             $table->integer('idProfesor')->unsigned();
-            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');        
+            $table->foreign('idProfesor')->references('idProfesor')->on('profesores')->onDelete('cascade');        
         });      
     }
 

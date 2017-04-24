@@ -22,7 +22,7 @@ class CreateMateriaTable extends Migration
             $table->string('clave');
             $table->integer('idProfesor')->unsigned();
             $table->primary('nrc');            
-            $table->foreign('idProfesor')->references('idProfesor')->on('Profesores')->onDelete('cascade');
+            $table->foreign('idProfesor')->references('idProfesor')->on('profesores')->onDelete('cascade');
         });      
     }
 
