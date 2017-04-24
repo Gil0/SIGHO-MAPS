@@ -1143,7 +1143,7 @@
                     </div>
                 </div>
             </div>
-<form onsubmit="return false;" id="panel" class="form-horizontal">
+        <form onsubmit="return false;" id="panel" class="form-horizontal">
 
 
 
@@ -1217,6 +1217,8 @@
     <option value="4" >Jueves</option>
     <option value="5" >Viernes</option>
     <option value="6" >Sábado</option>
+    <option value="6" >Domingo</option>
+    <option value="6" >Domingo</option>
 
 </select>
 &nbsp
@@ -1413,6 +1415,7 @@
             <td id="jueves20"></td>
             <td id="viernes20"></td>
             <td id="sabado20"></td>
+
                 
             </tr>
                 </tbody>
