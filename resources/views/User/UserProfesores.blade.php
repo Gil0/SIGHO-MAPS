@@ -164,7 +164,7 @@
         <h4 class="modal-title" id="myModalLabel">Nuevo Comentario</h4>
       </div>
 
-      <form id="formComentario" action="/user/comentario/crear" method="POST">
+      <form id="formComentario" method="POST">
 
 
       {{ csrf_field() }} <!-- ESTE TOKEN ES IMPORTANTE PARA PODER ENVIAR DATOS AL SERVER... si no lo incluyes habra error ya que la informacion no es "confiable" -->
@@ -192,9 +192,9 @@
         });
         $('button#nuevoCom').click(function(){
             $('#nuevoComentario').modal('show');
-            $('form#AgregarCom').attr('action', '/user/comentario/crear/'+$(this).attr('value') );
+            $('form#formComentario').attr('action', '/user/comentario/crear/'+$(this).attr('value') );
         });
 
     });
-
+</script>
 @endsection
