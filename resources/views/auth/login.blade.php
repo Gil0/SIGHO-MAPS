@@ -106,7 +106,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn1 ">
-                                    <i class="fa fa-btn fa-sign-in letter"></i> Login
+                                    Login
                                 </button>
 
                                 <a class="btn letter btn-link" href="{{ url('/password/reset') }}">¿Se te olvido la contraseña?</a>
