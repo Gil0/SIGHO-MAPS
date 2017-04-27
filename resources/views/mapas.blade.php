@@ -114,7 +114,6 @@
                                         <li><a href="{{url ('/Admin/Comentarios')}}">Comentarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Materias</a></li>
                                 <li class="active"><a href="{{url ('/Mapas')}}">Mapas</a></li>
                                 @else
                                 <li><a href="{{url ('/horario')}}">Horarios</a></li>
