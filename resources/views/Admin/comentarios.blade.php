@@ -112,7 +112,6 @@
                     <li class="active"><a href={{url ('/Admin/Comentarios')}}>Comentarios</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Materias</a></li>
                 <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
               </ul>
             </div>
