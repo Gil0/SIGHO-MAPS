@@ -97,7 +97,7 @@
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
-                                <li><a href="#">Horario</a></li>
+                                <li><a href="{{url ('/horario')}}">Horario</a></li>
                                 <li class="active"><a href="{{url ('/User/Profesores')}}">Profesores</a></li>
                                 <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
                             </ul>
