@@ -1130,13 +1130,13 @@
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{url ('/')}}">Inicio</a></li>
-                                <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li class="active"><a href="{{url ('/User/Profesores')}}">Lista</a></li>
+                                        <li><a href="{{url ('/User/Profesores')}}">Lista</a></li>
                                         <li><a href={{url ('/User/Comentarios')}}>Comentarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Materias</a></li>
+                                <li class="active"><a href="{{url ('/horario')}}">Horario</a></li>
                                 <li><a href="{{url ('/Mapas')}}">Mapas</a></li>
                             </ul>
                         </div>
